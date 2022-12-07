@@ -1,12 +1,8 @@
 <script lang="ts">
   /**
    * TODO: Have Choices Passed in as Array Or Object
-  */
-  
-
-
+   */
 </script>
-
 
 <!-- Loop of Choices -->
 <div class="box menu">
@@ -19,5 +15,4 @@
 </div>
 
 <style>
-
 </style>
