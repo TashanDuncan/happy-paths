@@ -10,11 +10,11 @@
 
   $: health = 100;
 
-  function handleHealth(opeartion: "inc" | "dec", amount: number): void {
-    if (opeartion === "inc") {
+  function handleHealth(operation: "inc" | "dec", amount: number): void {
+    if (operation === "inc") {
       health += amount;
     }
-    if (opeartion === "dec") {
+    if (operation === "dec") {
       health -= amount;
     }
   }
