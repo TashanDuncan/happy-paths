@@ -20,7 +20,11 @@
   }
   $: if (health > 100) {
     health = 100;
+  } 
+  $: if (health <= 0){
+    alert('GAME OVER! We will put a game over overlay here:) ')
   }
+
 </script>
 
 <main class="parent">
