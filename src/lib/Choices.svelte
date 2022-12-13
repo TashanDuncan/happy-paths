@@ -44,7 +44,15 @@
   align-self: center;
   cursor: pointer;
 }
-
+button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
 .choice:hover {
   background-color: gray;
 }
