@@ -1,7 +1,4 @@
 <script lang="ts">
-    import {each} from "svelte/internal";
-
-
     export let handleHealth, choiceSelection, act, timer
 
 

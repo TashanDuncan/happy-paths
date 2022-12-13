@@ -5,7 +5,7 @@ function hideOverlay() {
     visible = !visible
 }
 
-export let act, timer
+export let act
 </script>
 
 {#if visible}

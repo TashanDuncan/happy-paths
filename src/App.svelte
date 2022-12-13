@@ -4,7 +4,6 @@
   import { gameConfig } from "./lib/gameConfig";
   import LeftMonitor from "./lib/LeftMonitor.svelte";
   import Overlay from "./lib/Overlay.svelte";
-  import RightMonitor from "./lib/RightMonitor.svelte";
   import Time from './lib/Time.svelte'
 
   let backGroundImg = "images/newOfficeDesk.jpg";
@@ -14,7 +13,7 @@
   $: choiceSelection = [];
   $: mins = 0
   $: hours = 9;
-  function handleHealth(energy): void {
+  function handleHealth(energy: number): void {
     health += energy
   }
   $: if (health > 100) {
@@ -24,7 +23,7 @@
     alert("GAME OVER! We will put a game over overlay here:) ");
   }
 
-  function timer(timeUp) {
+  function timer(timeUp: number) {
     mins += timeUp;
     while (mins >= 60) {
       mins -= 60;
@@ -32,7 +31,7 @@
     }
   }
 
-  function act(scenarioId) {
+  function act(scenarioId: string) {
     const currentScenario = gameConfig.filter(
       (config) => config.id === scenarioId
     )[0];
@@ -44,11 +43,10 @@
 </script>
 
 <main class="parent">
-  <Overlay {act} {timer} />
+  <Overlay {act}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Time {mins}{hours}/>
   <Energy {health} />
   <LeftMonitor {storyText} />
-  <RightMonitor />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>

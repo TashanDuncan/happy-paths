@@ -40,11 +40,4 @@ export const gameConfig: GameConfig[] = [
             {option: "Work on story", energy: -20, scenarioId: "project", timeIncrease: 200}],
         random: false
     }
-
-    // {
-    //   id:3,
-    //   scenario: "Check Slack",
-    //   possibleNextEvent: [5,6,7,8]
-    //   // backend event
-    // },
 ];
