@@ -4,6 +4,8 @@
 function hideOverlay() {
     visible = !visible
 }
+
+export let act
 </script>
 
 {#if visible}
@@ -14,7 +16,12 @@ function hideOverlay() {
     an (early career?) developer, you've got lots to learn. Can you survive
     to the end of the week?
   </p>
-  <button on:click={hideOverlay}>start</button>
+  <button 
+  on:click={act('Start')}
+  on:click={hideOverlay}
+
+  
+  >start</button>
 </div>
 {/if}
 
