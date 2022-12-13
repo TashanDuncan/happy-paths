@@ -8,7 +8,7 @@
 
   let backGroundImg = "images/officeDesk.jpg";
    
-  $: name = ''
+  $: name = 'employee'
   $: health = 100;
   $: score = 0
   $: storyText = "";
@@ -45,14 +45,18 @@
     storyText = currentScenario.prompt;
     choiceSelection = currentScenario.options;
   }
+
+  function changeName(e){
+    name = e.target.value
+  }
 </script>
 
 <main class="parent">
-  <MainMenu {name}/>
+  <MainMenu {changeName}/>
   <Overlay {act} {name}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins}{hours} {health}/>
-  <MainMonitor {storyText} />
+  <MainMonitor {name}{storyText} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
 

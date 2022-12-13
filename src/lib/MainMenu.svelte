@@ -1,13 +1,9 @@
 <script lang="ts">
-  export let name
+  export let changeName
   let visible = true;
 
   function hideOverlay() {
     visible = !visible;
-  }
-  
-  function changeName(){
-    
   }
 
 </script>
@@ -15,9 +11,9 @@
 {#if visible}
   <div class="main-menu">
     <h1>Happy Paths - The Game</h1>
-    <label for="name">Enter Name (4 to 8 characters):</label>
+    <label for="name">Enter Name(4 to 8 characters):</label>
     <input
-      bind:value={name}
+      on:input={changeName}
       type="text"
       name="name"
       id="name"
