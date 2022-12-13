@@ -1,41 +1,33 @@
 <script lang="ts">
-    let visible = true;
+  export let act, name;
+  let visible = true;
 
-function hideOverlay() {
-    visible = !visible
-}
-
-export let act
+  function hideOverlay() {
+    visible = !visible;
+  }
 </script>
 
 {#if visible}
-<div class="overlay">
-  <h1>Backstory</h1>
-  <p>
-    It's the start of another week at [Generic car advertising company]. As
-    an (early career?) developer, you've got lots to learn. Can you survive
-    to the end of the week?
-  </p>
-  <button 
-  on:click={act('start-monday')}
-  on:click={hideOverlay}
-
-
-  
-  >start</button>
-</div>
+  <div class="overlay">
+    <h1>Welcome {name}</h1>
+    <p>
+      It's the start of another week at [Generic car advertising company]. As an
+      (early career?) developer, you've got lots to learn. Can you survive to
+      the end of the week?
+    </p>
+    <button on:click={act("start-monday")} on:click={hideOverlay}>start</button>
+  </div>
 {/if}
 
-
 <style>
-.overlay {
-  position: absolute;
-  z-index: 2;
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  left: 20%;
-  top: 50%;
-  text-align: center;
-}
+  .overlay {
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    left: 20%;
+    top: 50%;
+    text-align: center;
+  }
 </style>
