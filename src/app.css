@@ -56,10 +56,10 @@ input[type="reset"] {
 }
 .parent .box.right-monitor {
   top: 20%;
-  right: 20%;
+  right: 10%;
   width: 28vw;
   height: 200px;
-  transform: rotate(-5deg);
+  transform: rotate(-2deg);
 }
 .parent .box.laptop {
   top: 50%;

@@ -5,7 +5,7 @@ function hideOverlay() {
     visible = !visible
 }
 
-export let act
+export let act, timer
 </script>
 
 {#if visible}
@@ -17,8 +17,10 @@ export let act
     to the end of the week?
   </p>
   <button 
-  on:click={act('Stand up')}
+  on:click={act('Start')}
+  on:click={timer()}
   on:click={hideOverlay}
+
 
   
   >start</button>

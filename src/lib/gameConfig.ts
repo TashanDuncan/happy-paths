@@ -1,11 +1,22 @@
-export const gameConfig = [
+interface GameConfig {
+  id: number;
+  scenario: string;
+  prompt?: string;
+  options: { [key: string]: number};
+  random: boolean;
+  timeIncrease: number
+}
+
+export const gameConfig: GameConfig[] = [
   {
     id: 1,
     scenario: "Stand up",
     prompt: "Talk about board?",
     options: {
       "": -10
-    }
+    },
+    random: false,
+    timeIncrease: 30
   },
   {
     id:2,
@@ -17,34 +28,13 @@ export const gameConfig = [
       "Go Home": -100
     },
     random: false,
-  },
-  {
-    id:3,
-    scenario: "Check Slack",
-    possibleNextEvent: [5,6,7,8]
-    // backend event
-  },
-  {
-    id:10,
+    timeIncrease: 30
 
   },
-  {
-  },
-  {
-    scenario: "Poo",
-    prompt: "The dragon breathes fire!",
-    options: ["Duck", "Jump"],
-    energy: -10
-  },
-  {
-    scenario: "Duck",
-    prompt: "The dragon breathes fire!",
-    options: ["Run", "Jump"],
-    energy: -10
-  },
-  {
-    scenario: "Fire",
-    prompt: "The fire alarm just went off!",
-    options: ["Run", "Chill, it's probably just a drill."]
-  }
+  // {
+  //   id:3,
+  //   scenario: "Check Slack",
+  //   possibleNextEvent: [5,6,7,8]
+  //   // backend event
+  // },
 ];

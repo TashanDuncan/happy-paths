@@ -2,15 +2,9 @@
   import { each } from "svelte/internal";
 
 
-  /**
-   * TODO: Have Choices Passed in as Array Or Object
-   */
-  export let handleHealth, choiceSelection, act
 
-  enum Health{
-    INCREASE = 'inc',
-    DECREASE = 'dec'
-  }
+  export let handleHealth, choiceSelection, act, timer
+
 
 </script>
 
@@ -18,7 +12,7 @@
 <div class="box menu">
   <div class="choice-box">
     {#each Object.entries(choiceSelection) as [option, energy]}
-          <button class="choice" on:click={handleHealth(energy)} on:click={act(option)}>{option}</button>
+          <button class="choice" on:click={handleHealth(energy)} on:click={act(option)} on:click={timer()}>{option}</button>
     {/each}
   </div>
 </div>
