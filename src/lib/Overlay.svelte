@@ -17,7 +17,7 @@ export let act
     to the end of the week?
   </p>
   <button 
-  on:click={act('Start')}
+  on:click={act('Stand up')}
   on:click={hideOverlay}
 
   

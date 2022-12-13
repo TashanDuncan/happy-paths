@@ -13,11 +13,8 @@
   $: storyText = "";
   $: choiceSelection = [];
 
-  function handleHealth(choice, amount: number): void {
-    const storyChapter = gameConfig.filter(
-            (config) => config.choice === choice
-    )[0];
-
+  function handleHealth(energy): void {
+    health += energy
   }
   $: if (health > 100) {
     health = 100;
@@ -26,13 +23,13 @@
     alert("GAME OVER! We will put a game over overlay here:) ");
   }
 
-  function act(choice) {
-    const storyChapter = gameConfig.filter(
-      (config) => config.choice === choice
+  function act(scenario) {
+    const currentScenario = gameConfig.filter(
+      (config) => config.scenario === scenario
     )[0];
 
-    storyText = storyChapter.prompt;
-    choiceSelection = storyChapter.options;
+    storyText = currentScenario.prompt;
+    choiceSelection = currentScenario.options;
   }
 </script>
 
@@ -43,5 +40,5 @@
   <Energy {health} />
   <LeftMonitor {storyText} />
   <RightMonitor />
-  <Choices {handleHealth} {choiceSelection} />
+  <Choices {act} {handleHealth} {choiceSelection} />
 </main>
