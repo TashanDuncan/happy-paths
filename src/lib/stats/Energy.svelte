@@ -13,10 +13,12 @@
 </script>
 
 <div class="energy">
-  Energy:<div
+  <div
     class="energy-gauge"
     style={`width:${health}%; background-color:${color};`}
-  />
+  >
+    <span class="energy-label">Energy: {health}%</span>
+  </div>
 </div>
 
 <style>
@@ -25,12 +27,17 @@
     flex-direction: row;
     align-items: center;
     justify-content: start;
-    bottom: 15%;
-    right: 1%;
     width: 90%;
     height: 50px;
   }
   .energy-gauge {
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .energy-label {
+    position: absolute;
+    left: 10%;
   }
 </style>
