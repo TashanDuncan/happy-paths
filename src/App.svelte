@@ -2,11 +2,11 @@
   import Choices from "./lib/Choices.svelte";
   import Energy from "./lib/Energy.svelte";
   import { gameConfig } from "./lib/gameConfig";
-  import LeftMonitor from "./lib/LeftMonitor.svelte";
+  import MainMonitor from "./lib/MainMonitor.svelte";
   import Overlay from "./lib/Overlay.svelte";
   import Time from './lib/Time.svelte'
 
-  let backGroundImg = "images/newOfficeDesk.jpg";
+  let backGroundImg = "images/officeDesk.jpg";
 
   $: health = 100;
   $: storyText = "";
@@ -47,6 +47,13 @@
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Time {mins}{hours}/>
   <Energy {health} />
-  <LeftMonitor {storyText} />
+  <MainMonitor {storyText} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
+
+<style>
+  .parent {
+  position: relative;
+}
+
+</style>

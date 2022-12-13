@@ -24,8 +24,13 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    top: 15%;
+  right: 1%;
+  width: 3vw;
+  height: 200px;
   }
   .energy-gauge {
     width: 100%;
   }
+
 </style>

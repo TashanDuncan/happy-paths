@@ -28,5 +28,14 @@ export let act
 
 
 <style>
-
+.overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  left: 20%;
+  top: 50%;
+  text-align: center;
+}
 </style>

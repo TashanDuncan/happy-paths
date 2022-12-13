@@ -22,20 +22,6 @@ input[type="reset"] {
   height: 100vh;
 }
 
-.overlay {
-  position: absolute;
-  z-index: 2;
-  background-color: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  left: 20%;
-  top: 50%;
-  text-align: center;
-}
-
-.parent {
-  position: relative;
-}
 .parent .box {
   border: 1px solid red;
   position: absolute;
@@ -46,69 +32,4 @@ input[type="reset"] {
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-}
-.parent .box.left-monitor {
-  top: 22%;
-  left: 13%;
-  width: 28vw;
-  height: 200px;
-  transform: rotate(-5deg);
-}
-.parent .box.right-monitor {
-  top: 20%;
-  right: 10%;
-  width: 28vw;
-  height: 200px;
-  transform: rotate(-2deg);
-}
-.parent .box.laptop {
-  top: 50%;
-  right: 33%;
-  width: 16vw;
-  height: 120px;
-}
-.parent .box.menu {
-  top: 75%;
-  left: 6%;
-  width: 35vw;
-  height: 200px;
-}
-.parent .box.date {
-  top: 1%;
-  right: 1%;
-  width: 20vw;
-  height: 100px;
-}
-
-.parent .box.energy {
-  top: 15%;
-  right: 1%;
-  width: 3vw;
-  height: 200px;
-}
-
-.choice-box {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  list-style-type: none;
-}
-
-.choice {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 25%;
-  width: 100%;
-  text-align: center;
-  align-self: center;
-  cursor: pointer;
-}
-
-.choice:hover {
-  background-color: gray;
 }

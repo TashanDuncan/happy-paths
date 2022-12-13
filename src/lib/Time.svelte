@@ -21,5 +21,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    top: 1%;
+  right: 1%;
+  width: 20vw;
+  height: 100px;
   }
+
 </style>
