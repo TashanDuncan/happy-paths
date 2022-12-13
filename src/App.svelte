@@ -12,7 +12,6 @@
   $: health = 100;
   $: storyText = "";
   $: choiceSelection = [];
-  $: timeIncrease = 0
   $: mins = 0
   $: hours = 9;
   function handleHealth(energy): void {
@@ -25,20 +24,20 @@
     alert("GAME OVER! We will put a game over overlay here:) ");
   }
 
-  function timer() {
-    mins += timeIncrease;
-    if (mins === 60) {
-      mins = 0;
+  function timer(timeUp) {
+    mins += timeUp;
+    while (mins >= 60) {
+      mins -= 60;
       hours++;
     }
   }
 
-  function act(scenario) {
+  function act(scenarioId) {
     const currentScenario = gameConfig.filter(
-      (config) => config.scenario === scenario
+      (config) => config.id === scenarioId
     )[0];
 
-    timeIncrease = currentScenario?.timeIncrease
+
     storyText = currentScenario.prompt;
     choiceSelection = currentScenario.options;
   }
@@ -47,7 +46,7 @@
 <main class="parent">
   <Overlay {act} {timer} />
   <img src={backGroundImg} alt="office background" class="background-image" />
-  <Time {timeIncrease} {mins}{hours}/>
+  <Time {mins}{hours}/>
   <Energy {health} />
   <LeftMonitor {storyText} />
   <RightMonitor />

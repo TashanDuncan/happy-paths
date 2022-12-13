@@ -17,8 +17,7 @@ export let act, timer
     to the end of the week?
   </p>
   <button 
-  on:click={act('Start')}
-  on:click={timer()}
+  on:click={act('start-monday')}
   on:click={hideOverlay}
 
 

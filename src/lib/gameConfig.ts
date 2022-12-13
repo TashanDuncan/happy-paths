@@ -1,40 +1,50 @@
 interface GameConfig {
-  id: number;
-  scenario: string;
-  prompt?: string;
-  options: { [key: string]: number};
-  random: boolean;
-  timeIncrease: number
+    id: string;
+    scenario: string;
+    prompt?: string;
+    options: Options[];
+    random: boolean;
+}
+
+interface Options {
+    option: string;
+    energy: number;
+    scenarioId: string;
+    timeIncrease: number;
 }
 
 export const gameConfig: GameConfig[] = [
-  {
-    id: 1,
-    scenario: "Stand up",
-    prompt: "Talk about board?",
-    options: {
-      "": -10
+    {
+        id: "stand-up-monday",
+        scenario: "Stand up",
+        prompt: "Talk about board?",
+        options: [],
+        random: false
     },
-    random: false,
-    timeIncrease: 30
-  },
-  {
-    id:2,
-    scenario: "Start",
-    prompt: "What to do first?",
-    options: {
-      "Check Slack" : -5,
-      "Poo" : +10,
-      "Go Home": -100
+    {
+        id: "start-monday",
+        scenario: "Start",
+        prompt: "What to do first?",
+        options: [
+            {option: "Check Slack", energy: -5, scenarioId: "stand-up-monday", timeIncrease: 30},
+            {option: "Go Home", energy: -100, scenarioId: "home-monday", timeIncrease: 120},
+            {option: "Poo", energy: +10, scenarioId: "bathroom-monday", timeIncrease: 60}
+        ],
+        random: false
     },
-    random: false,
-    timeIncrease: 30
+    {
+        id: "slack-monday",
+        scenario: "Slack",
+        prompt: "something something",
+        options: [
+            {option: "Work on story", energy: -20, scenarioId: "project", timeIncrease: 200}],
+        random: false
+    }
 
-  },
-  // {
-  //   id:3,
-  //   scenario: "Check Slack",
-  //   possibleNextEvent: [5,6,7,8]
-  //   // backend event
-  // },
+    // {
+    //   id:3,
+    //   scenario: "Check Slack",
+    //   possibleNextEvent: [5,6,7,8]
+    //   // backend event
+    // },
 ];
