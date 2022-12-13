@@ -18,10 +18,10 @@
 
 <style>
   .laptop {
-  top: 75%;
-  left: 6%;
-  width: 35vw;
-  height: 200px;
+  top: 40%;
+  left: 9%;
+  width: 33vw;
+  height: 290px;
 }
 .choice-box {
   height: 100%;

@@ -6,10 +6,9 @@ export let storyText: string
 
 <style>
 .monitor {
-  top: 22%;
-  left: 13%;
-  width: 28vw;
-  height: 200px;
-  transform: rotate(-5deg);
+  top: 7%;
+  right: 1.5%;
+  width: 45vw;
+  height: 420px;
 }
 </style>

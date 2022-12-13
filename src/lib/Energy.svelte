@@ -15,22 +15,21 @@
 <div class="box energy">
   <div
     class="energy-gauge"
-    style={`height:${health}%; background-color:${color};`}
+    style={`width:${health}%; background-color:${color};`}
   />
 </div>
 
 <style>
   .energy {
     display: flex;
-    flex-direction: column;
-    justify-content: end;
-    top: 15%;
-  right: 1%;
-  width: 3vw;
-  height: 200px;
+    flex-direction: row;
+    justify-content: start;
+    bottom: 15%;
+    right: 1%;
+    width: 20vw;
+    height: 50px;
   }
   .energy-gauge {
-    width: 100%;
+    height: 100%;
   }
-
 </style>
