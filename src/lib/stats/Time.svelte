@@ -10,9 +10,9 @@
   }
 </script>
 
-<div class="box date">
+<div class="date">
   <h1>Monday</h1>
-  <span>{hours}:{mins === 0 ? "00" : mins}</span>
+  <span>Time: {hours}:{mins === 0 ? "00" : mins}</span>
 </div>
 
 <style>
@@ -21,10 +21,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    bottom: 1%;
-  right: 1%;
-  width: 20vw;
-  height: 100px;
   }
 
 </style>

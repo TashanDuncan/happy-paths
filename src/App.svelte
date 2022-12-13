@@ -1,12 +1,10 @@
 <script lang="ts">
   import Choices from "./lib/Choices.svelte";
-  import Energy from "./lib/Energy.svelte";
   import { gameConfig } from "./lib/gameConfig";
   import MainMenu from "./lib/MainMenu.svelte";
   import MainMonitor from "./lib/MainMonitor.svelte";
   import Overlay from "./lib/Overlay.svelte";
-  import Score from "./lib/Score.svelte";
-  import Time from './lib/Time.svelte'
+  import Stats from "./lib/Stats.svelte";
 
   let backGroundImg = "images/officeDesk.jpg";
    
@@ -50,9 +48,7 @@
   <MainMenu {name}/>
   <Overlay {act} {name}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
-  <Score {score}/>
-  <Time {mins}{hours}/>
-  <Energy {health} />
+  <Stats {score} {mins}{hours} {health}/>
   <MainMonitor {storyText} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
