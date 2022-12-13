@@ -15,15 +15,18 @@
   $: choiceSelection = [];
   $: mins = 0
   $: hours = 9;
-  function handleHealth(energy: number): void {
+
+  function handleHealth(scenarioId: number, energy: number): void {
     health += energy
-  }
-  $: if (health > 100) {
+    $: if (health > 100) {
     health = 100;
   }
   $: if (health <= 0) {
+    console.log(scenarioId)
     alert("GAME OVER! We will put a game over overlay here:) ");
   }
+  }
+
 
   function timer(timeUp: number) {
     mins += timeUp;

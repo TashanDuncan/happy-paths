@@ -4,6 +4,10 @@
 
   function hideOverlay() {
     visible = !visible;
+  
+  function showGameOverOverlay() {
+    
+  }
   }
 </script>
 
@@ -15,7 +19,7 @@
       (early career?) developer, you've got lots to learn. Can you survive to
       the end of the week?
     </p>
-    <button on:click={act("start-monday")} on:click={hideOverlay}>start</button>
+    <button on:click={act("stand-up-monday")} on:click={hideOverlay}>start</button>
   </div>
 {/if}
 
