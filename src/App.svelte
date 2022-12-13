@@ -4,11 +4,13 @@
   import { gameConfig } from "./lib/gameConfig";
   import MainMonitor from "./lib/MainMonitor.svelte";
   import Overlay from "./lib/Overlay.svelte";
+  import Score from "./lib/Score.svelte";
   import Time from './lib/Time.svelte'
 
   let backGroundImg = "images/officeDesk.jpg";
 
   $: health = 100;
+  $: score = 0
   $: storyText = "";
   $: choiceSelection = [];
   $: mins = 0
@@ -45,6 +47,7 @@
 <main class="parent">
   <Overlay {act}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
+  <Score {score}/>
   <Time {mins}{hours}/>
   <Energy {health} />
   <MainMonitor {storyText} />
