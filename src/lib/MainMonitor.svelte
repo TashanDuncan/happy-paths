@@ -10,20 +10,16 @@ $: text = storyText.split('\n')
 </script>
 
 {#if currentScenarioId === 'debugging-game-monday'}
+  {console.log(currentScenarioId)}
   <div class="box monitor"><DebuggingGame></DebuggingGame></div>
-{:else}
-<div class="box monitor">{#each text as line}
-  <p>{line}</p>
-{/each}</div>
-{/if}
-
-{#if currentScenarioId === 'memory-game-monday'}
+{:else if currentScenarioId === 'memory-game-monday'}
 <div class="box monitor"><MemoryGame></MemoryGame></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
 {/each}</div>
 {/if}
+
 
 
 <style>
