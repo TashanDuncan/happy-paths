@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MiniGame from "./MiniGame.svelte";
+  import TicTacToe from "./TicTacToe.svelte";
 
 
 export let storyText: string, currentScenarioType
@@ -9,7 +9,7 @@ $: text = storyText.split('\n')
 </script>
 
 {#if currentScenarioType === 'mini-game'}
-<div class="box monitor"><MiniGame></MiniGame></div>
+<div class="box monitor"><TicTacToe></TicTacToe></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
