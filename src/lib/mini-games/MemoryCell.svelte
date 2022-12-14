@@ -62,6 +62,6 @@
 }
 
 .cell.solved:before {
-  background: lightblue;
+  background: #202b61;
 }
 </style>
