@@ -1,38 +1,35 @@
 <script>
   import Grid from "./MemoryGrid.svelte";
-  let seconds = 30;
-  let score = 0;
+  $: seconds = 5;
 
-  function updateGame() {
+  function countdown() {
     seconds -= 1;
     if (seconds === 0) {
       clearInterval(gameInterval);
     }
   }
 
-  let gameInterval = setInterval(updateGame, 1000);
+  let gameInterval = setInterval(countdown, 1000);
 </script>
 
 <main>
+  {#if seconds>0}
   <h1>Match up the meeting rooms as quickly as possible!</h1>
-
   <Grid />
+  <div class="time">
+    Time remaining: {seconds} seconds
+  </div>
+  {:else}
+  <div class="end-game">You were fashionably late to your meeting. </div>
+  {/if}
+
 </main>
 
-<div class="time">
-  Time remaining: {seconds} seconds
-  <br />
-  Score: {score}
-  <br />
-</div>
+
 
 <style>
   :root {
     font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .time {
-    text-align: center;
   }
 
   main {
@@ -50,9 +47,7 @@
     max-width: none;
   }
 
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
+  .end-game {
+    font-size: 2rem;
   }
 </style>

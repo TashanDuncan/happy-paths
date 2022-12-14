@@ -32,9 +32,9 @@
     <div class="overlay">
       <h1>Welcome {name}</h1>
       <p>
-        It's the start of another week at [Generic car advertising company]. As
-        an (early career?) developer, you've got lots to learn. Can you survive
-        to the end of the week?
+        It's the start of a new week at Generic UK No. 1 Automotive Classified Advertising Company. As
+        an early career developer, you've got lots to learn. Can you survive
+        to the end of the day?
       </p>
       <button on:click={act("stand-up-monday")} on:click={overlayToggle}
         >start</button
