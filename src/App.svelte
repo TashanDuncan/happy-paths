@@ -1,5 +1,6 @@
 <script lang="ts">
   import Choices from "./lib/Choices.svelte";
+  import Coffee from "./lib/Coffee.svelte";
   import { gameConfig } from "./lib/gameConfig";
   import MainMenu from "./lib/MainMenu.svelte";
   import MainMonitor from "./lib/MainMonitor.svelte";
@@ -7,8 +8,8 @@
   import Overlay from "./lib/Overlay.svelte";
   import Stats from "./lib/Stats.svelte";
 
-  let backGroundImg = "images/officeDesk.jpg";
-
+  
+  $: backGroundImg = "images/desk-headphones-coffee.jpg";
   $: name = "employee";
   $: health = 100;
   $: score = 0;
@@ -20,7 +21,7 @@
   $: hours = 9;
   let isOverlayVisible = true;
 
-  function handleHealth(scenarioId: number, energy: number): void {
+  function handleHealth(energy: number): void {
     health += energy;
     if (health > 100) {
       health = 100;
@@ -57,17 +58,22 @@
     isOverlayVisible = !isOverlayVisible;
   }
 
-  function setScore(gameScore) {
+  function setScore(gameScore: number) {
     score += gameScore
+  }
+
+  function setBackground(url: string) {
+    backGroundImg = url
   }
 
   $: if (currentScenarioType === "game-over") {
     overlayToggle();
   }
+
 </script>
 
 <main class="parent">
-  <Music {currentScenarioType} />
+  <Music {currentScenarioType}/>
   <MainMenu {changeName} />
   <Overlay
     {act}
@@ -83,6 +89,7 @@
   <Stats {score} {mins} {hours} {health} />
   <MainMonitor {storyText} {currentScenarioId} {setScore}/>
   <Choices {act} {handleHealth} {choiceSelection} {currentScenarioId} {timer} />
+  <Coffee {setBackground} {handleHealth}/>
 </main>
 
 <style>

@@ -22,7 +22,7 @@
       {#each choiceSelection as choice}
         <button
           class="choice"
-          on:click={handleHealth(choice.scenarioId, choice.energy)}
+          on:click={handleHealth(choice.energy)}
           on:click={timer(choice.timeIncrease)}
           on:click={act(choice.scenarioId)}>{choice.option}</button
         >
