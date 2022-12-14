@@ -98,7 +98,7 @@ Official Appl3`,
         options: [
             {option: "I've been wanting a new iPhone for ages! Click link.", energy: -10, scenarioId: "phished-monday", timeIncrease: 30},
             {option: "Hmm very sus. Report and forward to IT.", energy: -10, scenarioId: "not-phished-monday", timeIncrease: 30},
-            {option: "Oh no, your laptop must have been infected by a deadly virus. Burn it asap.", energy: -50, scenarioId: "destruction-monday", timeIncrease: 60}
+            {option: "Oh no, your laptop must be possessed by a deadly virus. Burn it asap.", energy: -50, scenarioId: "destruction-monday", timeIncrease: 60}
         ],
         type: "normal"
     },

@@ -1,5 +1,5 @@
 <script>
-    import Board from "./Board.svelte";
+    import Board from "./mini-games/Board.svelte";
     const title = "Tic Tac Toe";
   </script>
   

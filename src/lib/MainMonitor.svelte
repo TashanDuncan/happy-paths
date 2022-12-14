@@ -1,13 +1,15 @@
 <script lang="ts">
+  import MiniGame from "./MiniGame.svelte";
 
-export let storyText: string, currentScenarioId
+
+export let storyText: string, currentScenarioType
 
 $: text = storyText.split('\n')
 
 </script>
 
-{#if currentScenarioId === 'debugging-game-monday'}
-<div class="box monitor">GAME</div>
+{#if currentScenarioType === 'mini-game'}
+<div class="box monitor"><MiniGame></MiniGame></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
