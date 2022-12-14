@@ -82,7 +82,7 @@
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins} {hours} {health} />
   <MainMonitor {storyText} {currentScenarioId} {setScore}/>
-  <Choices {act} {handleHealth} {choiceSelection} {timer} />
+  <Choices {act} {handleHealth} {choiceSelection} {currentScenarioId} {timer} />
 </main>
 
 <style>

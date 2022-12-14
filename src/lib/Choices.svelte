@@ -1,6 +1,10 @@
 <script lang="ts">
-    export let handleHealth, choiceSelection, act, timer
+    export let handleHealth, choiceSelection, act, timer, currentScenarioId
+
     let clapSound = new Audio("sounds/single-clap.wav")
+  $: if(currentScenarioId === 'good-clap-start-monday' || currentScenarioId === 'bad-clap-start-monday'){
+      clapSound.play()
+    }
 
 </script>
 
