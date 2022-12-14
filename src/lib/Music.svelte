@@ -7,6 +7,7 @@
   );
   let gameOverSound = new Audio("sounds/failure-4-with-gong-69906.mp3");
 
+
   $: if (currentScenarioType === "game-over") {
     isShowing = false
     backgroundMusic.pause();

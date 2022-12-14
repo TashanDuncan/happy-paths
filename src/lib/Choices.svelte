@@ -1,6 +1,6 @@
 <script lang="ts">
     export let handleHealth, choiceSelection, act, timer
-
+    let clapSound = new Audio("sounds/single-clap.wav")
 
 </script>
 
