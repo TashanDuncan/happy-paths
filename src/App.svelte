@@ -26,8 +26,7 @@
     health = 100;
   }
     if (health <= 0) {
-    storyText = 'You ran out of evergy'
-    currentScenarioType = 'game-over'
+      overlayToggle()
   }
   }
 
@@ -69,7 +68,7 @@ $: if(currentScenarioType === 'game-over'){
 <main class="parent">
   <Music {currentScenarioType}/>
   <MainMenu {changeName}/>
-  <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}/>
+  <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}{health}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins}{hours} {health}/>
   <MainMonitor {storyText}{currentScenarioId} />

@@ -5,7 +5,8 @@
     currentScenarioType,
     storyText,
     overlayToggle,
-    isOverlayVisible;
+    isOverlayVisible,
+    health
 
     function reloadPage(){
       window.location.reload()
@@ -13,11 +14,14 @@
 </script>
 
 {#if isOverlayVisible}
-  {#if currentScenarioType === "game-over"}
+  {#if currentScenarioType === "game-over" || health <= 0}
     <div class="overlay">
       <h1>GAME OVER</h1>
       <p>
-        {storyText}
+        {#if currentScenarioType === "game-over"}{storyText}
+        {:else}
+        You ran out of Energy :(
+        {/if}
       </p>
       <p>Final Score: {score}</p>
       <button on:click={reloadPage}
