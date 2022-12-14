@@ -72,7 +72,7 @@ $: if(currentScenarioType === 'game-over'){
   <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins}{hours} {health}/>
-  <MainMonitor {storyText}{currentScenarioType} />
+  <MainMonitor {storyText}{currentScenarioId} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
 

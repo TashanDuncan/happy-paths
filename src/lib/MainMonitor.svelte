@@ -2,13 +2,13 @@
   import TicTacToe from "./TicTacToe.svelte";
 
 
-export let storyText: string, currentScenarioType
+export let storyText: string, currentScenarioId
 
 $: text = storyText.split('\n')
 
 </script>
 
-{#if currentScenarioType === 'mini-game'}
+{#if currentScenarioId === 'debugging-game-monday'}
 <div class="box monitor"><TicTacToe></TicTacToe></div>
 {:else}
 <div class="box monitor">{#each text as line}
