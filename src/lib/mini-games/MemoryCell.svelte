@@ -6,14 +6,14 @@
   "
   data-cell-val="{cell.val}" 
   style="--img: {cell.img}"
-  on:click="{() => onHandleClick(cell.key)}"
+  on:click="{() => handleClick(cell.key)}"
 />
 
 
 <script>
   export let peekTwo
   export let cell
-  export let onHandleClick
+  export let handleClick
 </script>
 
 <style scoped>

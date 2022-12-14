@@ -1,16 +1,13 @@
 <div class="grid" style="--size: {size}; --cell-size: {cellSize}; --padd: {gap}">
     {#each cells as cell, index (cell.key)}
-      <Cell 
-        peekTwo="{peekTwo}" 
-        cell="{cell}" 
-        onHandleClick="{handleClick}" 
-      />
+      <Cell {peekTwo} {cell} {handleClick} />
       {/each}
   </div>
   
   <script>
     import { afterUpdate } from 'svelte';
     import Cell from './MemoryCell.svelte'
+  import { memoryInput } from './utils/MemoryInput';
   
     import {makeRepeatedArr, shuffleArray, markSolved} from './utils/MemoryUtils.js'
   
@@ -21,6 +18,8 @@
     let peekTwo = []
     let cells = shuffleArray(makeRepeatedArr(size))
     console.log(makeRepeatedArr(size))
+    console.log(memoryInput)
+    
   
     const handleClick = (key) => {
       if (peekTwo.includes(key)) return

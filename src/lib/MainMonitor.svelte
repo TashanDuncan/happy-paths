@@ -9,6 +9,7 @@ $: text = storyText.split('\n')
 
 </script>
 
+{console.log(currentScenarioId)}
 {#if currentScenarioId === 'debugging-game-monday'}
   {console.log(currentScenarioId)}
   <div class="box monitor"><DebuggingGame></DebuggingGame></div>
