@@ -18,7 +18,9 @@ export const gameConfig: GameConfig[] = [
     id: "stand-up-monday",
     scenario: "Stand up",
     prompt:
-      "First thing's first, your daily stand up. Hold on, another team has taken over the lab where you normally have YOUR stand up! What do you do?",
+      `First thing's first, your daily stand up. 
+      Hold on, another team has taken over the lab where you normally have YOUR stand up! 
+      What do you do?`,
     options: [
       {
         option:
@@ -46,7 +48,8 @@ export const gameConfig: GameConfig[] = [
     id: "failed-removal-monday",
     scenario: "Failed removal",
     prompt:
-      "You angrily march towards the lab, but tripped on a stray cable and fell in front of everyone. Humiliated, you crawl back to your seat and decide maybe Teams wouldn't be the worst idea after all.",
+      `You angrily march towards the lab, but tripped on a stray cable and fell in front of everyone. 
+      Humiliated, you crawl back to your seat and decide maybe Teams wouldn't be the worst idea after all.`,
     options: [
       {
         option: "Pretend nothing's happend.",
@@ -61,7 +64,8 @@ export const gameConfig: GameConfig[] = [
     id: "failed-to-find-monday",
     scenario: "Failed to find",
     prompt:
-      "You checked the other labs on the floor, but everywhere's full. How?? No one's normally in on Mondays! Fine, to Teams it is. You're only 5 minutes late.",
+      `You checked the other labs on the floor, but everywhere's full. 
+      How?? No one's normally in on Mondays! Fine, to Teams it is. You're only...um...14 minutes late.`,
     options: [
       {
         option: "Open Teams.",
@@ -76,7 +80,8 @@ export const gameConfig: GameConfig[] = [
     id: "clap-monday",
     scenario: "Stand up",
     prompt:
-      "Your team ends every stand up with a clap. It's something to do with team bonding and it's not weird at all. Definitely not cult like. Nope. Not at all. On 4...",
+      `Your team ends every stand up with a clap. It's something to do with team bonding and it's not weird at all. 
+      Definitely not cult like. Nope. Not at all. On 4...`,
     options: [
       {
         option: "1...",
@@ -209,7 +214,8 @@ Official Appl3`,
     id: "not-phished-monday",
     scenario: "Not Phished",
     prompt:
-      "Turns out it was all a test! And you passed. Generic UK No. 1 Automotive Classified Advertising Company is very proud of you. Yay.",
+      `Turns out it was all a test! And you passed. 
+      Generic UK No. 1 Automotive Classified Advertising Company is very proud of you. Yay.`,
     options: [
       {
         option: "I'm awesome :)",
@@ -224,7 +230,8 @@ Official Appl3`,
     id: "phished-monday",
     scenario: "Phished",
     prompt:
-      "Turns out it was all a test! And you failed. Generic UK No. 1 Automotive Classified Advertising Company is very disappointed in you. Boo.",
+      `Turns out it was all a test! And you failed. 
+      Generic UK No. 1 Automotive Classified Advertising Company is very disappointed in you. Boo.`,
     options: [
       {
         option: "aw :(",
@@ -260,11 +267,12 @@ Official Appl3`,
     id: "meeting-monday",
     scenario: "Meeting",
     prompt:
-      "New to the job, you just realised all the meeting rooms are named after cars... Your next meeting is in 10 mins, can you remember which room it's in?",
+      `New to the job, you just realised all the meeting rooms are named after cars... 
+      Your next meeting is in 10 mins, can you remember which room it's in?`,
     options: [
       {
         option: "Give it a go!",
-        energy: -10,
+        energy: -20,
         scenarioId: "memory-game-monday",
         timeIncrease: 0,
       },
@@ -289,11 +297,13 @@ Official Appl3`,
     id: "lunch-after-meeting-monday",
     scenario: "Lunch",
     prompt:
-      "What a productive meeting! You understood very little of it, but you sensed a productive vibe. Now what should we get for lunch?",
+      `What a productive meeting! You understood very little of it, but you sensed a productive vibe. 
+      Even though you want nothing more to get straight back to work, it's lunch time now.
+      Should you go for...?`,
     options: [
       {
-        option: "Sainsbury's meal deal",
-        energy: +20,
+        option: "A Sainsbury's meal deal",
+        energy: +30,
         scenarioId: "fire-monday",
         timeIncrease: 60,
       },
@@ -316,7 +326,8 @@ Official Appl3`,
     id: "fire-monday",
     scenario: "Fire",
     prompt:
-      "That was a nice meal, let's get back to work. Wait, what's that sound? The fire alarm just went off and everyone's evacuating!",
+      `That was a nice meal, let's get back to work. Wait, what's that sound? 
+      The fire alarm just went off and everyone's evacuating!`,
     options: [
       {
         option: "Follow everyone!",
@@ -353,14 +364,16 @@ Official Appl3`,
     id: "fiery-death-monday",
     scenario: "Fiery death",
     prompt:
-      "Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/ You really should've got out when you had the chance...",
+      `Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/ 
+      You really should've got out when you had the chance...`,
     type: "game-over",
   },
   {
     id: "ticket-monday",
     scenario: "Ticket",
     prompt:
-      "Now that you've survived a fire, it's finally time to work on your ticket. The legacy codebase you're working on is full of bugs. Fix as many you can!",
+      `Now that you've survived a fire, it's finally time to work on your ticket. 
+      The legacy codebase you're working on is full of bugs. Fix as many you can!`,
     options: [
       {
         option: "Start!",
@@ -378,7 +391,7 @@ Official Appl3`,
     options: [
       {
         option: "Next",
-        energy: -40,
+        energy: -20,
         scenarioId: "slack-monday",
         timeIncrease: 60,
       },
@@ -389,10 +402,11 @@ Official Appl3`,
     id: "slack-monday",
     scenario: "Slack",
     prompt:
-      "Check this out. Someone just posted on Slack. Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!",
+      `Check this out. Someone just posted on Slack. 
+      Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!`,
     options: [
       {
-        option: "Heck yeah!",
+        option: "Heck yeah! I can totally drive without running into things.",
         energy: 0,
         scenarioId: "driving-game-monday",
         timeIncrease: 60,
@@ -407,7 +421,7 @@ Official Appl3`,
     options: [
       {
         option: "Next",
-        energy: 0,
+        energy: -20,
         scenarioId: "final-task-monday",
         timeIncrease: 60,
       },
@@ -439,7 +453,8 @@ Official Appl3`,
     id: "home-monday",
     scenario: "Slack",
     prompt:
-      "You go home, It was one of the fixed working days not flex working days. Remember connected working is in more than you're out. With that being said. You're Fired!",
+      `What a day. You choose to go home, forgetting that it was a fixed working day and not a flex day. 
+      Connected working is in more than you're out...with that being said. You're FIRED!`,
     type: "game-over",
   },
   {
