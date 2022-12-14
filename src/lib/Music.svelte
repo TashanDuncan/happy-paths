@@ -5,6 +5,7 @@
   let backgroundMusic = new Audio(
     "sounds/we-wish-you-a-merry-christmas-126685.mp3"
   );
+  backgroundMusic.volume = 0.1
   let gameOverSound = new Audio("sounds/failure-4-with-gong-69906.mp3");
 
 
