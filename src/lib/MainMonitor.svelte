@@ -15,7 +15,7 @@ $: text = storyText.split('\n')
 {:else if currentScenarioId === 'memory-game-monday'}
 <div class="box monitor"><MemoryGame/></div>
 {:else if currentScenarioId === 'driving-game-monday'}
-<div class="box monitor"><DrivingTest/></div>
+<div class="box monitor" style="align-items: normal;"><DrivingTest/></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
@@ -28,6 +28,7 @@ $: text = storyText.split('\n')
 .monitor {
   display: flex;
   flex-direction: column;
+  align-items: center;
   top: 7%;
   right: 1.5%;
   width: 45vw;

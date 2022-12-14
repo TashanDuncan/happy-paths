@@ -1,4 +1,4 @@
-<script>
+<script lang="js">
   import { onMount } from "svelte";
   let canvas;
   let ctx;
@@ -23,6 +23,7 @@
       return Math.floor(Math.random() * n);
     }
     class RectCollider {
+ 
       constructor(x, y, width, height) {
         this.x = x;
         this.y = y;
@@ -67,7 +68,7 @@
           5
         );
         if (playerCollider.isColliding(friendCollider)) {
-          gameState.playerSpeed *= 1.05;
+          gameState.playerSpeed *= 1.101;
           gameState.friends.splice(i, 1);
         }
       }
@@ -82,7 +83,7 @@
           y: random(canvas.height),
           velocity: gameState.enemySpeed,
         });
-        gameState.enemySpeed *= 1.001;
+        gameState.enemySpeed *= 1.101;
         gameState.enemyTimeoutInit = gameState.enemyTimeoutInit * 0.999;
         //console.log('timeout:'+gameState.enemyTimeoutInit);
         //console.log('speed:'+gameState.enemySpeed);
@@ -173,11 +174,18 @@
 </script>
 
 
-    <canvas id="canvas-top" />
+<div class="game center">
+  <div class="canvas-wrapper">
+    <p id="score"></p>
+    <canvas id="canvas-top"></canvas>
+  </div>
+  
+</div>
 
 <style>
   canvas {
   width: 100%;
+  height: 100%;
 }
 
 </style>
