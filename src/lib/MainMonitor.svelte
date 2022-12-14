@@ -1,6 +1,6 @@
 <script lang="ts">
-  import MemoryGame from "./MemoryGame.svelte";
-  import DebuggingGame from "./DebuggingGame.svelte";
+  import MemoryGame from "./mini-games/memory-game/MemoryGame.svelte";
+  import DebuggingGame from "./mini-games/debugging-game/DebuggingGame.svelte";
   import DrivingTest from "./mini-games/driving-test/DrivingTest.svelte";
 
 
@@ -10,7 +10,6 @@ $: text = storyText.split('\n')
 
 </script>
 
-{console.log(currentScenarioId)}
 {#if currentScenarioId === 'debugging-game-monday'}
   <div class="box monitor"><DebuggingGame/></div>
 {:else if currentScenarioId === 'memory-game-monday'}

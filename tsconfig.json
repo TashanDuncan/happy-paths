@@ -15,6 +15,6 @@
     "checkJs": true,
     "isolatedModules": true
   },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/lib/mini-games/utils/MemoryInput.ts"],
+  "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte", "src/lib/mini-games/memory-game/utils/MemoryInput.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

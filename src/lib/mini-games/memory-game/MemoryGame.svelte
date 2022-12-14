@@ -1,5 +1,5 @@
 <script>
-    import Grid from './mini-games/MemoryGrid.svelte'
+    import Grid from './MemoryGrid.svelte'
   </script>
   
   <main>
