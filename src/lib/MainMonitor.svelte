@@ -1,8 +1,14 @@
 <script lang="ts">
-export let storyText: string, name
+export let storyText: string, currentScenarioId
 </script>
 
-<div class="box monitor">{storyText}<span class="logged-in">logged in as {name}</span></div>
+{#if currentScenarioId === 'debugging-game-monday'}
+<div class="box monitor">GAME</div>
+{:else}
+<div class="box monitor">{storyText}</div>
+{/if}
+
+
 
 <style>
 .monitor {
@@ -10,10 +16,5 @@ export let storyText: string, name
   right: 1.5%;
   width: 45vw;
   height: 420px;
-}
-.logged-in{
-  position: absolute;
-  top: 4%;
-  left: 4%;
 }
 </style>

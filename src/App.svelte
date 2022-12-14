@@ -11,6 +11,7 @@
   $: name = 'employee'
   $: health = 100;
   $: score = 0
+  $: currentScenarioId = ''
   $: storyText = "";
   $: choiceSelection = [];
   $: mins = 0
@@ -41,7 +42,7 @@
       (config) => config.id === scenarioId
     )[0];
 
-
+    currentScenarioId = currentScenario.id
     storyText = currentScenario.prompt;
     choiceSelection = currentScenario.options;
   }
@@ -56,7 +57,7 @@
   <Overlay {act} {name}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins}{hours} {health}/>
-  <MainMonitor {name}{storyText} />
+  <MainMonitor {storyText}{currentScenarioId} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
 
