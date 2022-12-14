@@ -44,25 +44,25 @@ export const gameConfig: GameConfig[] = [
         option: "1...",
         energy: -20,
         scenarioId: "bad-clap-start-monday",
-        timeIncrease: 15,
+        timeIncrease: 0,
       },
       {
         option: "2...",
         energy: -20,
         scenarioId: "bad-clap-start-monday",
-        timeIncrease: 15,
+        timeIncrease: 0,
       },
       {
         option: "3...",
         energy: -20,
         scenarioId: "bad-clap-start-monday",
-        timeIncrease: 15,
+        timeIncrease: 0,
       },
       {
         option: "4!",
         energy: +5,
         scenarioId: "good-clap-start-monday",
-        timeIncrease: 15,
+        timeIncrease: 0,
       },
     ],
     type: "normal",
@@ -74,16 +74,10 @@ export const gameConfig: GameConfig[] = [
       "On FOUR! That was a terrible clap and your day's ruined. Right, what do you want to do first?",
     options: [
       {
-        option: "Work on ticket",
-        energy: -10,
-        scenarioId: "ticket-monday",
-        timeIncrease: 10,
-      },
-      {
         option: "Check email",
         energy: -10,
         scenarioId: "phishing-monday",
-        timeIncrease: 60,
+        timeIncrease: 30,
       },
       {
         option: "Go Home",
@@ -95,7 +89,7 @@ export const gameConfig: GameConfig[] = [
         option: "Poo",
         energy: +10,
         scenarioId: "bathroom-monday",
-        timeIncrease: 60,
+        timeIncrease: 5,
       },
     ],
     type: "normal",
@@ -107,16 +101,10 @@ export const gameConfig: GameConfig[] = [
       "That was a great clap, you feel energised! Right, what do you want to do first?",
     options: [
       {
-        option: "Work on ticket",
-        energy: -10,
-        scenarioId: "ticket-monday",
-        timeIncrease: 10,
-      },
-      {
         option: "Check email",
         energy: -10,
         scenarioId: "phishing-monday",
-        timeIncrease: 60,
+        timeIncrease: 30,
       },
       {
         option: "Go Home",
@@ -128,7 +116,7 @@ export const gameConfig: GameConfig[] = [
         option: "Poo",
         energy: +10,
         scenarioId: "bathroom-monday",
-        timeIncrease: 60,
+        timeIncrease: 5,
       },
     ],
     type: "normal",
@@ -147,35 +135,6 @@ export const gameConfig: GameConfig[] = [
       },
     ],
     type: "normal",
-  },
-  {
-    id: "ticket-monday",
-    scenario: "Ticket",
-    prompt:
-      "The legacy codebase you're working on is full of bugs! Fix as many you can before lunch.",
-    options: [
-      {
-        option: "Start!",
-        energy: 0,
-        scenarioId: "debugging-game-monday",
-        timeIncrease: 0,
-      },
-    ],
-    type: "normal",
-  },
-  {
-    id: "debugging-game-monday",
-    scenario: "Debugging game",
-    prompt: "somehow implement mini game here",
-    options: [
-      {
-        option: "Next",
-        energy: -40,
-        scenarioId: "lunch-after-debugging-monday",
-        timeIncrease: 120,
-      },
-    ],
-    type: "mini-game",
   },
   {
     id: "phishing-monday",
@@ -203,7 +162,7 @@ Official Appl3`,
           "Oh no, your laptop must be possessed by a deadly virus. Burn it asap.",
         energy: -50,
         scenarioId: "destruction-monday",
-        timeIncrease: 60,
+        timeIncrease: 30,
       },
     ],
     type: "normal",
@@ -351,7 +310,7 @@ Official Appl3`,
         option: "Follow everyone!",
         energy: -20,
         scenarioId: "evacuated-monday",
-        timeIncrease: 100,
+        timeIncrease: 60,
       },
       {
         option:
@@ -372,7 +331,7 @@ Official Appl3`,
       {
         option: "Head back to the office",
         energy: 0,
-        scenarioId: "slack-monday",
+        scenarioId: "ticket-monday",
         timeIncrease: 0,
       },
     ],
@@ -386,16 +345,45 @@ Official Appl3`,
     type: "game-over",
   },
   {
+    id: "ticket-monday",
+    scenario: "Ticket",
+    prompt:
+      "Now that you've survived a fire, maybe it's finally time to work on your ticket. The legacy codebase you're working on is full of bugs. Fix as many you can!",
+    options: [
+      {
+        option: "Start!",
+        energy: 0,
+        scenarioId: "debugging-game-monday",
+        timeIncrease: 0,
+      },
+    ],
+    type: "normal",
+  },
+  {
+    id: "debugging-game-monday",
+    scenario: "Debugging game",
+    prompt: "somehow implement mini game here",
+    options: [
+      {
+        option: "Next",
+        energy: -40,
+        scenarioId: "slack-monday",
+        timeIncrease: 60,
+      },
+    ],
+    type: "mini-game",
+  },
+  {
     id: "slack-monday",
     scenario: "Slack",
     prompt:
-      "Someone just posted on slack. Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!",
+      "Check this out. Someone just posted on slack. Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!",
     options: [
       {
         option: "Heck yeah!",
         energy: 0,
         scenarioId: "driving-game-monday",
-        timeIncrease: 120,
+        timeIncrease: 60,
       },
     ],
     type: "normal",

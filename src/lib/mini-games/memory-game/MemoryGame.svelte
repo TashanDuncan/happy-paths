@@ -1,6 +1,6 @@
 <script>
   import Grid from "./MemoryGrid.svelte";
-  $: seconds = 5;
+  $: seconds = 20;
 
   function countdown() {
     seconds -= 1;
