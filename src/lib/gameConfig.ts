@@ -1,8 +1,8 @@
 interface GameConfig {
     id: string;
     scenario: string;
-    prompt?: string;
-    options: Options[];
+    prompt: string;
+    options?: Options[];
     type: "normal" | "game-over" | "mini-game";
 }
 
@@ -191,7 +191,6 @@ Official Appl3`,
         id: "fiery-death-monday",
         scenario: "Fiery death",
         prompt: "Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/ You really should've got out when you had the chance...",
-        options: [],
         type: "game-over"
     },
     {
@@ -210,5 +209,11 @@ Official Appl3`,
         options: [
         ],
         type:"mini-game"
-    }
+    },
+    {
+      id: "home-monday",
+      scenario: "Slack",
+      prompt: "You go home, It was one of the fixed working days not flex working days. Remember connected working is in more than you're out. With that being said. You're Fired!",
+      type:"game-over"
+  },
 ];
