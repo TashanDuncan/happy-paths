@@ -1,7 +1,10 @@
 <script lang="js">
   import { onMount } from "svelte";
+  import Score from "../../stats/Score.svelte";
   let canvas;
   let ctx;
+  let testScore;
+  $: isPlaying = true;
 
   function createCanvas() {
     canvas = document.getElementById("canvas-top");
@@ -23,7 +26,6 @@
       return Math.floor(Math.random() * n);
     }
     class RectCollider {
- 
       constructor(x, y, width, height) {
         this.x = x;
         this.y = y;
@@ -57,6 +59,8 @@
           10
         );
         if (playerCollider.isColliding(enemyCollider)) {
+          testScore = gameState.score;
+          isPlaying = false;
           return true;
         }
       }
@@ -70,6 +74,7 @@
         if (playerCollider.isColliding(friendCollider)) {
           gameState.playerSpeed *= 1.101;
           gameState.friends.splice(i, 1);
+          gameState.score++;
         }
       }
     }
@@ -116,7 +121,6 @@
       for (let i = 0; i < gameState.enemies.length; ++i) {
         if (gameState.enemies[i].x < -10) {
           gameState.enemies.splice(i, 1);
-          gameState.score++;
         }
       }
       document.getElementById("score").innerHTML = "score: " + gameState.score;
@@ -173,19 +177,26 @@
   onMount(createCanvas);
 </script>
 
-
-<div class="game center">
-  <div class="canvas-wrapper">
-    <p id="score"></p>
-    <canvas id="canvas-top"></canvas>
+{#if isPlaying}
+  <div class="game center">
+    <div class="canvas-wrapper">
+      <p id="score" />
+      <canvas id="canvas-top" />
+    </div>
   </div>
-  
-</div>
+{:else}
+  <div class="test-finish">
+    <h1>Nice Try</h1>
+    <p>You Scored {testScore} Points</p>
+  </div>
+{/if}
 
 <style>
   canvas {
-  width: 100%;
-  height: 100%;
-}
-
+    width: 100%;
+    height: 100%;
+  }
+  .test-finish {
+    text-align: center;
+  }
 </style>
