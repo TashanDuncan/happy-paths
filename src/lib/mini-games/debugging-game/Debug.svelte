@@ -1,8 +1,9 @@
 <script>
     import {onMount} from "svelte";
+    export let setScore;
     let seconds = 20
     let bugs = []
-    let score = 0
+    let debugScore = 0
 
     function createBug() {
         bugs.push({
@@ -31,6 +32,7 @@
         seconds -= 1
         if (seconds === 0) {
             clearInterval(gameInterval)
+            setScore(debugScore)
         }
         createBug()
         moveBugs()
@@ -40,7 +42,7 @@
     let gameInterval = setInterval(updateGame, 1000)
 
     function onBugClick(bug) {
-        score += 1
+        debugScore += 1
         bugs = bugs.filter(b => b !== bug)
     }
 
@@ -52,7 +54,7 @@
 <div>
     Time remaining: {seconds} seconds
     <br>
-    Score: {score}
+    Score: {debugScore}
     <br>
     {#each bugs as bug}
         <div

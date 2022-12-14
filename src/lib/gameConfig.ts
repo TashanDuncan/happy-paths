@@ -392,8 +392,25 @@ Official Appl3`,
     id: "driving-game-monday",
     scenario: "Driving game",
     prompt: "Implement mini game here",
-    options: [],
+    options: [
+      {
+        option: "Next",
+        energy: 0,
+        scenarioId: "final-task-monday",
+        timeIncrease: 60,
+      },
+    ],
     type: "mini-game",
+  },
+  {
+    id: "final-task-monday",
+    scenario: "Stay late",
+    prompt: "It's past 5 and most people are heading off, but you still have bugs to fix...",
+    options: [
+      {option: "Stay and finish off debugging", energy: 50, scenarioId: "win-screen", timeIncrease: 120},
+      {option: "Go home and relax", energy: 0, scenarioId: "win-screen", timeIncrease: 0}
+    ],
+    type:"normal"
   },
   {
     id: "home-monday",
