@@ -1,6 +1,7 @@
 <script lang="ts">
 $: isPlaying = false
   let backgroundMusic = new Audio('sounds/we-wish-you-a-merry-christmas-126685.mp3')
+  backgroundMusic.loop = true;
   function toggleMusic(){
     if(!backgroundMusic.paused ) {
       backgroundMusic.pause()
