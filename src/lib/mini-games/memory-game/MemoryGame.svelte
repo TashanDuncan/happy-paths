@@ -1,10 +1,14 @@
 <script>
+
+  export let setScore
+
   $: seconds = 20;
 
   function countdown() {
     seconds -= 1;
     if (seconds === 0) {
       clearInterval(gameInterval);
+      setScore(memoryScore)
     }
   }
 

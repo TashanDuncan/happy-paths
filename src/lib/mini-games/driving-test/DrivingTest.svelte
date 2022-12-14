@@ -1,6 +1,6 @@
 <script lang="js">
   import { onMount } from "svelte";
-  import Score from "../../stats/Score.svelte";
+  export let score
   let canvas;
   let ctx;
   let testScore;
@@ -60,6 +60,7 @@
         );
         if (playerCollider.isColliding(enemyCollider)) {
           testScore = gameState.score;
+          score += testScore
           isPlaying = false;
           return true;
         }
