@@ -11,14 +11,13 @@
 {#if visible}
   <div class="main-menu">
     <h1>Happy Paths - The Game</h1>
-    <label for="name">Enter Name(4 to 8 characters):</label>
+    <label for="name">Enter Name:</label>
     <input
       on:input={changeName}
       type="text"
       name="name"
       id="name"
       required
-      minlength="4"
       maxlength="8"
       size="10"
     />
