@@ -3,11 +3,12 @@
   import { gameConfig } from "./lib/gameConfig";
   import MainMenu from "./lib/MainMenu.svelte";
   import MainMonitor from "./lib/MainMonitor.svelte";
+  import Music from "./lib/Music.svelte";
   import Overlay from "./lib/Overlay.svelte";
   import Stats from "./lib/Stats.svelte";
 
   let backGroundImg = "images/officeDesk.jpg";
-   
+
   $: name = 'employee'
   $: health = 100;
   $: score = 0
@@ -62,9 +63,11 @@ function overlayToggle() {
 $: if(currentScenarioType === 'game-over'){
   overlayToggle()
 }
+
 </script>
 
 <main class="parent">
+  <Music/>
   <MainMenu {changeName}/>
   <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}/>
   <img src={backGroundImg} alt="office background" class="background-image" />
