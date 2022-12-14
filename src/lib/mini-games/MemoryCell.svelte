@@ -18,11 +18,12 @@
 
 <style scoped>
 .cell {
+
   position: relative;
   width: var(--cell-size);
   height: var(--cell-size);
   border-radius: 3px;
-  margin: calc(var(--padd) * 0.5);
+  margin: 0.1rem;
   transform-style: preserve-3d;
   transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -45,7 +46,6 @@
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  /* background-image: var(--img); */
   background-image: var(--img);
   color: #fff;
   transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);

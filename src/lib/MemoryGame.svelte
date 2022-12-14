@@ -3,15 +3,14 @@
   </script>
   
   <main>
-    <h1>Svelte Memory Game</h1>
+    <h1>Match up the meeting rooms as quickly as possible!</h1>
   
     <Grid />
   </main>
   
   <style>
     :root {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
   
     main {
@@ -20,19 +19,13 @@
       margin: 0 auto;
     }
   
-    img {
-      height: 16rem;
-      width: 16rem;
-    }
-  
     h1 {
-      color: #ff3e00;
-      text-transform: uppercase;
+      color: #050a6f;
       font-size: 2rem;
       font-weight: 100;
       line-height: 1.1;
       margin: 2rem auto;
-      max-width: 14rem;
+      max-width: none;
     }
   
     p {
@@ -41,14 +34,6 @@
       line-height: 1.35;
     }
   
-    @media (min-width: 480px) {
-      h1 {
-        max-width: none;
-      }
-  
-      p {
-        max-width: none;
-      }
-    }
+
   </style>
   

@@ -8,10 +8,6 @@
       {/each}
   </div>
   
-  <div>{JSON.stringify(peekTwo)}</div>
-  <div>{JSON.stringify(cells, null, 2)}</div>
-  
-  
   <script>
     import { afterUpdate } from 'svelte';
     import Cell from './MemoryCell.svelte'
@@ -24,6 +20,7 @@
     let size = 4
     let peekTwo = []
     let cells = shuffleArray(makeRepeatedArr(size))
+    console.log(makeRepeatedArr(size))
   
     const handleClick = (key) => {
       if (peekTwo.includes(key)) return

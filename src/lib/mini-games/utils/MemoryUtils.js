@@ -11,19 +11,10 @@ const makeRepeatedArr = (size) => {
   
       console.log(`${key} - ${val}`);
   
-      let img;
-      fetch(`https://source.unsplash.com/300x${300 + (200 + 50)}?animals`)
-        .then((res) => {
-          console.log(res.url);
-        })
-        .catch((err) => console.log(err));
-  
       return {
         key,
         val,
-        img: `linear-gradient(45deg, hsl(${
-          10 * (val + 3)
-        }, 100%, 50%) 50%, black 51%)`,
+        img: `linear-gradient(#e66465, #9198e5)`,
         solved: false,
       };
     });

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MemoryGame from "./MemoryGame.svelte";
   import TicTacToe from "./TicTacToe.svelte";
 
 
@@ -16,6 +17,13 @@ $: text = storyText.split('\n')
 {/each}</div>
 {/if}
 
+{#if currentScenarioId === 'memory-game-monday'}
+<div class="box monitor"><MemoryGame></MemoryGame></div>
+{:else}
+<div class="box monitor">{#each text as line}
+  <p>{line}</p>
+{/each}</div>
+{/if}
 
 
 <style>
