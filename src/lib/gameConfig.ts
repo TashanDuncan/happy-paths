@@ -35,7 +35,7 @@ export const gameConfig: GameConfig[] = [
       },
       {
         option: "Look for somewhere else",
-        energy: -10,
+        energy: -20,
         scenarioId: "failed-to-find-monday",
         timeIncrease: 15,
       },
@@ -80,19 +80,19 @@ export const gameConfig: GameConfig[] = [
     options: [
       {
         option: "1...",
-        energy: -20,
+        energy: -10,
         scenarioId: "bad-clap-start-monday",
         timeIncrease: 0,
       },
       {
         option: "2...",
-        energy: -20,
+        energy: -10,
         scenarioId: "bad-clap-start-monday",
         timeIncrease: 0,
       },
       {
         option: "3...",
-        energy: -20,
+        energy: -10,
         scenarioId: "bad-clap-start-monday",
         timeIncrease: 0,
       },
@@ -119,7 +119,7 @@ export const gameConfig: GameConfig[] = [
       },
       {
         option: "Go Home",
-        energy: -100,
+        energy: 0,
         scenarioId: "home-monday",
         timeIncrease: 0,
       },
@@ -146,7 +146,7 @@ export const gameConfig: GameConfig[] = [
       },
       {
         option: "Go Home",
-        energy: -100,
+        energy: 0,
         scenarioId: "home-monday",
         timeIncrease: 0,
       },
@@ -212,7 +212,7 @@ Official Appl3`,
       "Turns out it was all a test! And you passed. Generic UK No. 1 Automotive Classified Advertising Company is very proud of you. Yay.",
     options: [
       {
-        option: "aw :(",
+        option: "I'm awesome :)",
         energy: 0,
         scenarioId: "meeting-monday",
         timeIncrease: 0,
@@ -284,33 +284,6 @@ Official Appl3`,
       },
     ],
     type: "mini-game",
-  },
-  {
-    id: "lunch-after-debugging-monday",
-    scenario: "Lunch",
-    prompt:
-      "What a productive Monday morning! Now what should we get for lunch?",
-    options: [
-      {
-        option: "Sainsbury's meal deal",
-        energy: +20,
-        scenarioId: "fire-monday",
-        timeIncrease: 60,
-      },
-      {
-        option: "PaxterStorey",
-        energy: +40,
-        scenarioId: "fire-monday",
-        timeIncrease: 60,
-      },
-      {
-        option: "It's treat Monday, let's go somewhere nice.",
-        energy: +50,
-        scenarioId: "fire-monday",
-        timeIncrease: 60,
-      },
-    ],
-    type: "normal",
   },
   {
     id: "lunch-after-meeting-monday",
@@ -387,7 +360,7 @@ Official Appl3`,
     id: "ticket-monday",
     scenario: "Ticket",
     prompt:
-      "Now that you've survived a fire, maybe it's finally time to work on your ticket. The legacy codebase you're working on is full of bugs. Fix as many you can!",
+      "Now that you've survived a fire, it's finally time to work on your ticket. The legacy codebase you're working on is full of bugs. Fix as many you can!",
     options: [
       {
         option: "Start!",
@@ -416,7 +389,7 @@ Official Appl3`,
     id: "slack-monday",
     scenario: "Slack",
     prompt:
-      "Check this out. Someone just posted on slack. Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!",
+      "Check this out. Someone just posted on Slack. Your company's test driver just called off sick, the company is asking if you want to help them test out a new vehicle!",
     options: [
       {
         option: "Heck yeah!",
