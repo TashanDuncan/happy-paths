@@ -7,12 +7,14 @@
 <!-- Loop of Choices -->
 <div class="box laptop">
     <div class="choice-box">
+      {#if choiceSelection }
         {#each choiceSelection as choice}
             <button class="choice" on:click={handleHealth(choice.scenarioId, choice.energy)}
                     on:click={timer(choice.timeIncrease)}
                     on:click={act(choice.scenarioId)}
                     >{choice.option}</button>
         {/each}
+      {/if }
     </div>
 </div>
 

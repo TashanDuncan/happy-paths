@@ -9,27 +9,26 @@
 
   let backGroundImg = "images/officeDesk.jpg";
 
-  $: name = 'employee'
+  $: name = "employee";
   $: health = 100;
-  $: score = 0
-  $: currentScenarioId = ''
-  $: currentScenarioType = ''
+  $: score = 0;
+  $: currentScenarioId = "";
+  $: currentScenarioType = "";
   $: storyText = "";
   $: choiceSelection = [];
-  $: mins = 0
+  $: mins = 0;
   $: hours = 9;
   let isOverlayVisible = true;
 
   function handleHealth(scenarioId: number, energy: number): void {
-    health += energy
+    health += energy;
     if (health > 100) {
-    health = 100;
-  }
+      health = 100;
+    }
     if (health <= 0) {
-      overlayToggle()
+      act("no-energy");
+    }
   }
-  }
-
 
   function timer(timeUp: number) {
     mins += timeUp;
@@ -44,40 +43,46 @@
       (config) => config.id === scenarioId
     )[0];
 
-    currentScenarioId = currentScenario.id
-    currentScenarioType = currentScenario.type
+    currentScenarioId = currentScenario.id;
+    currentScenarioType = currentScenario.type;
     storyText = currentScenario.prompt;
     choiceSelection = currentScenario.options;
   }
 
-  function changeName(e){
-    name = e.target.value
+  function changeName(e) {
+    name = e.target.value;
   }
 
+  function overlayToggle() {
+    isOverlayVisible = !isOverlayVisible;
+  }
 
-function overlayToggle() {
-  isOverlayVisible = !isOverlayVisible;
-}
-
-$: if(currentScenarioType === 'game-over'){
-  overlayToggle()
-}
-
+  $: if (currentScenarioType === "game-over") {
+    overlayToggle();
+  }
 </script>
 
 <main class="parent">
-  <Music {currentScenarioType}/>
-  <MainMenu {changeName}/>
-  <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}{health}/>
+  <Music {currentScenarioType} />
+  <MainMenu {changeName} />
+  <Overlay
+    {act}
+    {name}
+    {storyText}
+    {currentScenarioType}
+    {overlayToggle}
+    {isOverlayVisible}
+    {score}
+    {health}
+  />
   <img src={backGroundImg} alt="office background" class="background-image" />
-  <Stats {score} {mins}{hours} {health}/>
-  <MainMonitor {storyText}{currentScenarioId} />
+  <Stats {score} {mins} {hours} {health} />
+  <MainMonitor {storyText} {currentScenarioId} />
   <Choices {act} {handleHealth} {choiceSelection} {timer} />
 </main>
 
 <style>
   .parent {
-  position: relative;
-}
-
+    position: relative;
+  }
 </style>

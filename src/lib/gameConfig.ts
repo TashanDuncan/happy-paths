@@ -216,4 +216,10 @@ Official Appl3`,
       prompt: "You go home, It was one of the fixed working days not flex working days. Remember connected working is in more than you're out. With that being said. You're Fired!",
       type:"game-over"
   },
+  {
+    id: "no-energy",
+    scenario: "no-energy",
+    prompt: "You're out of energy :(",
+    type:"game-over"
+},
 ];
