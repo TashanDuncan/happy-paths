@@ -67,7 +67,7 @@ $: if(currentScenarioType === 'game-over'){
 </script>
 
 <main class="parent">
-  <Music/>
+  <Music {currentScenarioType}/>
   <MainMenu {changeName}/>
   <Overlay {act} {name} {storyText}{currentScenarioType} {overlayToggle} {isOverlayVisible}{score}/>
   <img src={backGroundImg} alt="office background" class="background-image" />

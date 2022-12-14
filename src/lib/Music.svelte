@@ -1,6 +1,13 @@
 <script lang="ts">
+  export let currentScenarioType
 $: isPlaying = false
   let backgroundMusic = new Audio('sounds/we-wish-you-a-merry-christmas-126685.mp3')
+  let gameOverSound = new Audio('sounds/failure-4-with-gong-69906.mp3')
+
+  $: if(currentScenarioType === 'game-over'){
+    backgroundMusic.pause()
+    gameOverSound.play()
+}
   backgroundMusic.loop = true;
   function toggleMusic(){
     if(!backgroundMusic.paused ) {
@@ -10,6 +17,8 @@ $: isPlaying = false
       backgroundMusic.play()
       isPlaying = true
     }
+
+  
   }
 
 </script>
