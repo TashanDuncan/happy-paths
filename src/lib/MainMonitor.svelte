@@ -1,6 +1,6 @@
 <script lang="ts">
   import MemoryGame from "./MemoryGame.svelte";
-  import TicTacToe from "./TicTacToe.svelte";
+  import DebuggingGame from "./DebuggingGame.svelte";
 
 
 export let storyText: string, currentScenarioId
@@ -10,7 +10,7 @@ $: text = storyText.split('\n')
 </script>
 
 {#if currentScenarioId === 'debugging-game-monday'}
-<div class="box monitor"><TicTacToe></TicTacToe></div>
+  <div class="box monitor"><DebuggingGame></DebuggingGame></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
