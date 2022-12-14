@@ -17,19 +17,57 @@ export const gameConfig: GameConfig[] = [
   {
     id: "stand-up-monday",
     scenario: "Stand up",
-    prompt: "Talk about board?",
+    prompt:
+      "First thing's first, your daily stand up. Hold on, another team has taken over the lab where you normally have YOUR stand up! What do you do?",
     options: [
       {
-        option: "Option 1",
+        option:
+          "I guess they were there first...Join on Teams, but look forlornly towards the direction of the lab so they'd feel guilty.",
         energy: -10,
         scenarioId: "clap-monday",
         timeIncrease: 15,
       },
       {
-        option: "Option 2",
-        energy: -10,
-        scenarioId: "clap-monday",
+        option: "Forcibly remove them.",
+        energy: -20,
+        scenarioId: "failed-removal-monday",
         timeIncrease: 15,
+      },
+      {
+        option: "Look for somewhere else",
+        energy: -10,
+        scenarioId: "failed-to-find-monday",
+        timeIncrease: 15,
+      },
+    ],
+    type: "normal",
+  },
+  {
+    id: "failed-removal-monday",
+    scenario: "Failed removal",
+    prompt:
+      "You angrily march towards the lab, but tripped on a stray cable and fell in front of everyone. Humiliated, you crawl back to your seat and decide maybe Teams wouldn't be the worst idea after all.",
+    options: [
+      {
+        option: "Pretend nothing's happend.",
+        energy: 0,
+        scenarioId: "clap-monday",
+        timeIncrease: 0,
+      },
+    ],
+    type: "normal",
+  },
+  {
+    id: "failed-to-find-monday",
+    scenario: "Failed to find",
+    prompt:
+      "You checked the other labs on the floor, but everywhere's full. How?? No one's normally in on Mondays! Fine, to Teams it is. You're only 5 minutes late.",
+    options: [
+      {
+        option: "Open Teams.",
+        energy: 0,
+        scenarioId: "clap-monday",
+        timeIncrease: 0,
       },
     ],
     type: "normal",
@@ -277,7 +315,8 @@ Official Appl3`,
   {
     id: "lunch-after-meeting-monday",
     scenario: "Lunch",
-    prompt: "What a productive meeting! You understood very little of it, but you sensed a productive vibe. Now what should we get for lunch?",
+    prompt:
+      "What a productive meeting! You understood very little of it, but you sensed a productive vibe. Now what should we get for lunch?",
     options: [
       {
         option: "Sainsbury's meal deal",
@@ -405,12 +444,23 @@ Official Appl3`,
   {
     id: "final-task-monday",
     scenario: "Stay late",
-    prompt: "It's past 5 and most people are heading off, but you still have bugs to fix...",
+    prompt:
+      "It's past 5 and most people are heading off, but you still have bugs to fix...",
     options: [
-      {option: "Stay and finish off debugging", energy: 50, scenarioId: "win-screen", timeIncrease: 120},
-      {option: "Go home and relax", energy: 0, scenarioId: "win-screen", timeIncrease: 0}
+      {
+        option: "Stay and finish off debugging",
+        energy: 50,
+        scenarioId: "win-screen",
+        timeIncrease: 120,
+      },
+      {
+        option: "Go home and relax",
+        energy: 0,
+        scenarioId: "win-screen",
+        timeIncrease: 0,
+      },
     ],
-    type:"normal"
+    type: "normal",
   },
   {
     id: "home-monday",
@@ -423,6 +473,6 @@ Official Appl3`,
     id: "no-energy",
     scenario: "no-energy",
     prompt: "You're out of energy :(",
-    type:"game-over"
-},
+    type: "game-over",
+  },
 ];
