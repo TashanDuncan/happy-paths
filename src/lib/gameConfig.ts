@@ -3,7 +3,7 @@ interface GameConfig {
     scenario: string;
     prompt?: string;
     options: Options[];
-    random: boolean;
+    type: "normal" | "game-over" | "mini-game";
 }
 
 interface Options {
@@ -22,7 +22,7 @@ export const gameConfig: GameConfig[] = [
             {option: "Option 1", energy: -10, scenarioId: "clap-monday", timeIncrease: 15},
             {option: "Option 2", energy: -10, scenarioId: "clap-monday", timeIncrease: 15}
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "clap-monday",
@@ -34,7 +34,7 @@ export const gameConfig: GameConfig[] = [
             {option: "3...", energy: -20, scenarioId: "bad-clap-start-monday", timeIncrease: 15},
             {option: "4!", energy: +5, scenarioId: "good-clap-start-monday", timeIncrease: 15}
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "bad-clap-start-monday",
@@ -46,7 +46,7 @@ export const gameConfig: GameConfig[] = [
             {option: "Go Home", energy: -100, scenarioId: "home-monday", timeIncrease: 0},
             {option: "Poo", energy: +10, scenarioId: "bathroom-monday", timeIncrease: 60},
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "good-clap-start-monday",
@@ -58,7 +58,7 @@ export const gameConfig: GameConfig[] = [
             {option: "Go Home", energy: -100, scenarioId: "home-monday", timeIncrease: 0},
             {option: "Poo", energy: +10, scenarioId: "bathroom-monday", timeIncrease: 60},
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "bathroom-monday",
@@ -67,7 +67,7 @@ export const gameConfig: GameConfig[] = [
         options: [
             {option: "Read email", energy: -10, scenarioId: "phishing-monday", timeIncrease: 10},
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "ticket-monday",
@@ -76,7 +76,7 @@ export const gameConfig: GameConfig[] = [
         options: [
             {option: "Start!", energy: 0, scenarioId: "debugging-game-monday", timeIncrease: 0 },
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "debugging-game-monday",
@@ -85,7 +85,7 @@ export const gameConfig: GameConfig[] = [
         options: [
             {option: "Next", energy: -40, scenarioId: "lunch-after-debugging-monday", timeIncrease: 120 },
         ],
-        random: false
+        type: "mini-game"
     },
     {
         id: "phishing-monday",
@@ -100,7 +100,7 @@ Official Appl3`,
             {option: "Hmm very sus. Report and forward to IT.", energy: -10, scenarioId: "not-phished-monday", timeIncrease: 30},
             {option: "Oh no, your laptop must have been infected by a deadly virus. Burn it asap.", energy: -50, scenarioId: "destruction-monday", timeIncrease: 60}
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "not-phished-monday",
@@ -109,7 +109,7 @@ Official Appl3`,
         options: [
             {option: "aw :(", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 }
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "phished-monday",
@@ -118,7 +118,7 @@ Official Appl3`,
         options: [
             {option: "aw :(", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 }
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "destruction-monday",
@@ -128,7 +128,7 @@ Official Appl3`,
             {option: "Are you sure about that?", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 },
             {option: "Oh no, you're possessed too!", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 }
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "meeting-monday",
@@ -137,7 +137,7 @@ Official Appl3`,
         options: [
             {option: "Give it a go!", energy: -10, scenarioId: "memory-game-monday", timeIncrease: 0 },
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "memory-game-monday",
@@ -146,7 +146,7 @@ Official Appl3`,
         options: [
             {option: "Next", energy: 0, scenarioId: "lunch-after-meeting-monday", timeIncrease: 0 },
         ],
-        random: false
+        type: "mini-game"
     },
     {
         id: "lunch-after-debugging-monday",
@@ -157,7 +157,7 @@ Official Appl3`,
             {option: "PaxterStorey", energy: +40, scenarioId: "fire-monday", timeIncrease: 60 },
             {option: "It's treat Monday, let's go somewhere nice.", energy: +50, scenarioId: "fire-monday", timeIncrease: 60 },
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "lunch-after-meeting-monday",
@@ -168,7 +168,7 @@ Official Appl3`,
             {option: "PaxterStorey", energy: +40, scenarioId: "fire-monday", timeIncrease: 60 },
             {option: "It's treat Monday, let's go somewhere nice.", energy: +50, scenarioId: "fire-monday", timeIncrease: 60 },
         ],
-        random: false
+        type: "normal"
     },
     {
         id: "fire-monday",
@@ -177,15 +177,22 @@ Official Appl3`,
         options: [
             {option: "Follow everyone!", energy: -20, scenarioId: "evacuated-monday", timeIncrease: 100},
             {option: "It's probably a drill, even though those never takes place on Mondays...Chill.", energy: -100, scenarioId: "fiery-death-monday", timeIncrease: 0}],
-        random: false
+        type: "normal"
     },
     {
         id: "evacuated-monday",
-        scenario: "Evacutaed",
+        scenario: "Evacuated",
         prompt: "Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/",
         options: [
             {option: "Head back to the office", energy: 0, scenarioId: "slack-monday", timeIncrease: 0 }],
-        random: false
+        type: "normal"
+    },
+    {
+        id: "fiery-death-monday",
+        scenario: "Fiery death",
+        prompt: "Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/ You really should've got out when you had the chance...",
+        options: [],
+        type: "game-over"
     },
     {
         id: "slack-monday",
@@ -194,7 +201,7 @@ Official Appl3`,
         options: [
             {option: "Heck yeah!", energy: 0, scenarioId: "driving-game-monday", timeIncrease: 120}
         ],
-        random:false
+        type:"normal"
     },
     {
         id: "driving-game-monday",
@@ -202,6 +209,6 @@ Official Appl3`,
         prompt: "Implement mini game here",
         options: [
         ],
-        random:false
+        type:"mini-game"
     }
 ];
