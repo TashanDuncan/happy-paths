@@ -29,22 +29,43 @@ export const gameConfig: GameConfig[] = [
         scenario: "Stand up",
         prompt: "Your team ends every stand up with a clap. It's something to do with team bonding and it's not weird at all. Definitely not cult like. Nope. Not at all. On 4...",
         options: [
-            {option: "1...", energy: -10, scenarioId: "start-monday", timeIncrease: 15},
-            {option: "2...", energy: -10, scenarioId: "start-monday", timeIncrease: 15},
-            {option: "3...", energy: -10, scenarioId: "start-monday", timeIncrease: 15},
-            {option: "4!", energy: +5, scenarioId: "start-monday", timeIncrease: 15}
+            {option: "1...", energy: -20, scenarioId: "bad-clap-start-monday", timeIncrease: 15},
+            {option: "2...", energy: -20, scenarioId: "bad-clap-start-monday", timeIncrease: 15},
+            {option: "3...", energy: -20, scenarioId: "bad-clap-start-monday", timeIncrease: 15},
+            {option: "4!", energy: +5, scenarioId: "good-clap-start-monday", timeIncrease: 15}
         ],
         random: false
     },
     {
-        id: "start-monday",
+        id: "bad-clap-start-monday",
         scenario: "Start",
-        prompt: "What to do first?",
+        prompt: "On FOUR! That was a terrible clap and your day's ruined. Right, what do you want to do first?",
         options: [
             {option: "Work on ticket", energy: -10, scenarioId: "ticket-monday", timeIncrease: 10},
             {option: "Check email", energy: -10, scenarioId: "phishing-monday", timeIncrease: 60},
             {option: "Go Home", energy: -100, scenarioId: "home-monday", timeIncrease: 0},
             {option: "Poo", energy: +10, scenarioId: "bathroom-monday", timeIncrease: 60},
+        ],
+        random: false
+    },
+    {
+        id: "good-clap-start-monday",
+        scenario: "Start",
+        prompt: "That was a great clap, you feel energised! Right, what do you want to do first?",
+        options: [
+            {option: "Work on ticket", energy: -10, scenarioId: "ticket-monday", timeIncrease: 10},
+            {option: "Check email", energy: -10, scenarioId: "phishing-monday", timeIncrease: 60},
+            {option: "Go Home", energy: -100, scenarioId: "home-monday", timeIncrease: 0},
+            {option: "Poo", energy: +10, scenarioId: "bathroom-monday", timeIncrease: 60},
+        ],
+        random: false
+    },
+    {
+        id: "bathroom-monday",
+        scenario: "Poo",
+        prompt: "You feel a sense of relief. Heading back to your desk, you saw you got a new email.",
+        options: [
+            {option: "Read email", energy: -10, scenarioId: "phishing-monday", timeIncrease: 10},
         ],
         random: false
     },
@@ -62,7 +83,7 @@ export const gameConfig: GameConfig[] = [
         scenario: "Debugging game",
         prompt: "somehow implement mini game here",
         options: [
-            {option: "Next", energy: -40, scenarioId: "lunch-monday", timeIncrease: 120 },
+            {option: "Next", energy: -40, scenarioId: "lunch-after-debugging-monday", timeIncrease: 120 },
         ],
         random: false
     },
@@ -102,7 +123,7 @@ Official Appl3`,
     {
         id: "destruction-monday",
         scenario: "Destruction",
-        prompt: "Um...no. The laptop was not possessed and you just destructed company property. Shame on you.",
+        prompt: "Um...no. The laptop was not possessed and you just destroyed company property. Shame on you.",
         options: [
             {option: "Are you sure about that?", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 },
             {option: "Oh no, you're possessed too!", energy: 0, scenarioId: "meeting-monday", timeIncrease: 0 }
@@ -123,12 +144,23 @@ Official Appl3`,
         scenario: "Memory game",
         prompt: "somehow implement mini game here",
         options: [
-            {option: "Next", energy: 0, scenarioId: "lunch-monday", timeIncrease: 0 },
+            {option: "Next", energy: 0, scenarioId: "lunch-after-meeting-monday", timeIncrease: 0 },
         ],
         random: false
     },
     {
-        id: "lunch-monday",
+        id: "lunch-after-debugging-monday",
+        scenario: "Lunch",
+        prompt: "What a productive Monday morning! Now what should we get for lunch?",
+        options: [
+            {option: "Sainsbury's meal deal", energy: +20, scenarioId: "fire-monday", timeIncrease: 60 },
+            {option: "PaxterStorey", energy: +40, scenarioId: "fire-monday", timeIncrease: 60 },
+            {option: "It's treat Monday, let's go somewhere nice.", energy: +50, scenarioId: "fire-monday", timeIncrease: 60 },
+        ],
+        random: false
+    },
+    {
+        id: "lunch-after-meeting-monday",
         scenario: "Lunch",
         prompt: "Good meeting! Now what should we get for lunch?",
         options: [
