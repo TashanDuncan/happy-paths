@@ -16,7 +16,8 @@
     const gap = '10px'
     let size = 4
     let peekTwo = []
-    let cells = shuffleArray(makeRepeatedArr(size))
+    // let cells = shuffleArray(makeRepeatedArr(size))
+    let cells = shuffleArray(memoryInput)
     console.log(makeRepeatedArr(size))
     console.log(memoryInput)
     

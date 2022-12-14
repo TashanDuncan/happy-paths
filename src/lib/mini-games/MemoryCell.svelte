@@ -18,7 +18,6 @@
 
 <style scoped>
 .cell {
-
   position: relative;
   width: var(--cell-size);
   height: var(--cell-size);
