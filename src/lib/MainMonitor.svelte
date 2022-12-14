@@ -1,6 +1,7 @@
 <script lang="ts">
   import MemoryGame from "./MemoryGame.svelte";
   import DebuggingGame from "./DebuggingGame.svelte";
+  import DrivingTest from "./mini-games/driving-test/DrivingTest.svelte";
 
 
 export let storyText: string, currentScenarioId
@@ -11,10 +12,11 @@ $: text = storyText.split('\n')
 
 {console.log(currentScenarioId)}
 {#if currentScenarioId === 'debugging-game-monday'}
-  {console.log(currentScenarioId)}
-  <div class="box monitor"><DebuggingGame></DebuggingGame></div>
+  <div class="box monitor"><DebuggingGame/></div>
 {:else if currentScenarioId === 'memory-game-monday'}
-<div class="box monitor"><MemoryGame></MemoryGame></div>
+<div class="box monitor"><MemoryGame/></div>
+{:else if currentScenarioId === 'driving-game-monday'}
+<div class="box monitor"><DrivingTest/></div>
 {:else}
 <div class="box monitor">{#each text as line}
   <p>{line}</p>
