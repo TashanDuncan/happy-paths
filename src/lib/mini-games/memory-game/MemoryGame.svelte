@@ -86,7 +86,7 @@
     </div>
   {:else}
     <div class="end-game">
-      You were fashionably late to your meeting. Your scored {memoryScore} points.
+      You were fashionably late to your meeting. You scored {memoryScore} points.
     </div>
   {/if}
 </main>
