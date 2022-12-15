@@ -51,17 +51,25 @@
     })
 </script>
 
-<div>
-    Time remaining: {seconds} seconds
-    <br>
-    Score: {debugScore}
-    <br>
-    {#each bugs as bug}
-        <div
-                style="position: absolute; left: {bug.x}%; top: {bug.y}%"
-                on:click={() => onBugClick(bug)}
-        >
-            Bug
+<main>
+    {#if seconds>0}
+        <h1></h1>
+        <div>
+            Time remaining: {seconds} seconds
+            <br />
+            Score: {debugScore}
+            <br />
+            {#each bugs as bug}
+                <div
+                        style="position: absolute; left: {bug.x}%; top: {bug.y}%"
+                        on:click={() => onBugClick(bug)}
+                >
+                    Bug
+                </div>
+            {/each}
         </div>
-    {/each}
-</div>
+    {:else}
+        <div class="end-game">You removed {debugScore} bugs!</div>
+    {/if}
+
+</main>

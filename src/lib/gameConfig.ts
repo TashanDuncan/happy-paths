@@ -345,7 +345,7 @@ Official Appl3`,
       {
         option:
           "It's probably a drill, even though those never takes place on Mondays...Chill.",
-        energy: -100,
+        energy: 0,
         scenarioId: "fiery-death-monday",
         timeIncrease: 0,
       },
@@ -460,7 +460,7 @@ Official Appl3`,
     options: [
       {
         option: "Stay and finish off debugging",
-        energy: 50,
+        energy: -50,
         scenarioId: "win-screen",
         timeIncrease: 120,
       },
@@ -472,6 +472,13 @@ Official Appl3`,
       },
     ],
     type: "normal",
+  },
+  {
+    id: "win-screen",
+    scenario: "Win",
+    prompt:
+        "You win!",
+    type: "game-over",
   },
   {
     id: "home-monday",

@@ -4,5 +4,5 @@
   </script>
   
 
-  <h1>Debugging</h1>
+  <h1></h1>
   <Debug {setScore}/>
