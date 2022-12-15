@@ -75,6 +75,10 @@
         if (playerCollider.isColliding(friendCollider)) {
           gameState.playerSpeed *= 1.101;
           gameState.friends.splice(i, 1);
+          gameState.friends.push({
+          x: random(canvas.width - 20),
+          y: random(canvas.height - 20),
+        })
           gameState.score++;
         }
       }
@@ -125,7 +129,7 @@
         }
       }
       document.getElementById("score").innerHTML = "score: " + gameState.score;
-      if (gameState.score % 10 == 0 && gameState.friendAdded == false) {
+      if (gameState.score % 2 == 0 && gameState.friendAdded == false) {
         gameState.friends.push({
           x: random(canvas.width - 20),
           y: random(canvas.height - 20),
