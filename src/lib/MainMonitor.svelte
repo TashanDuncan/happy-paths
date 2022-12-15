@@ -31,5 +31,7 @@
     right: 1.5%;
     width: 45vw;
     height: 420px;
+    font-size: 2rem;
+    text-align: center;
   }
 </style>

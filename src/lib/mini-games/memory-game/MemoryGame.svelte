@@ -127,6 +127,7 @@
     margin: 0.1rem;
     transform-style: preserve-3d;
     transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1rem;
   }
 
   .cell:after,
