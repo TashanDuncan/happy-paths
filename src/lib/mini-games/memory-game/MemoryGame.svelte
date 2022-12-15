@@ -68,7 +68,7 @@
   style="--size: {size}; --cell-size: {cellSize}; --padd: {gap}"
 >
   {#each cells as cell, index (cell.key)}
-  <div
+  <button
   class="
     cell 
     {peekTwo.includes(cell.key) ? 'peek' : ''}
