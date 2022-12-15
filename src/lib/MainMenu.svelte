@@ -45,8 +45,9 @@
     margin: 2rem;
     padding: 1rem;
     font-family: 'Montserrat Alternates', sans-serif;
-    background-color: #284B63;
+    background-color: #F17300;
     color: white;
+    font-weight: 700;
   }
 
   label {

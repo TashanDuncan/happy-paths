@@ -99,7 +99,7 @@
         //console.log('timeout:'+gameState.enemyTimeoutInit);
         //console.log('speed:'+gameState.enemySpeed);
       }
-      ctx.fillStyle = "#FF0000";
+      ctx.fillStyle = "#c20000";
       gameState.rectPosX += gameState.rectVelocity.x;
       gameState.rectPosY += gameState.rectVelocity.y;
       if (gameState.rectPosX > canvas.width - 10) {
@@ -119,7 +119,7 @@
         gameState.rectVelocity.y = 0;
       }
       ctx.fillRect(gameState.rectPosX, gameState.rectPosY, 10, 10);
-      ctx.fillStyle = "#0000FF";
+      ctx.fillStyle = "#202b61";
       for (let i = 0; i < gameState.enemies.length; ++i) {
         gameState.enemies[i].x -= gameState.enemies[i].velocity;
         ctx.fillRect(gameState.enemies[i].x, gameState.enemies[i].y, 10, 10);

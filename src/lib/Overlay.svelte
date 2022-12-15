@@ -93,7 +93,7 @@
     margin: 2rem;
     padding: 1rem;
     font-family: 'Montserrat Alternates', sans-serif;
-    background-color: #2EC4B6;
+    background-color: #F17300;
     color: white;
     border: none
   }
