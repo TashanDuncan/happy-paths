@@ -10,7 +10,7 @@
 
 {#if visible}
   <div class="main-menu">
-    <h1>Happy Paths - The Game</h1>
+    <h1>🙃🙃 Happy Paths - The Game 🙃🙃</h1>
     <label for="name">Enter Name:</label>
     <input
       on:input={changeName}
@@ -40,7 +40,17 @@
 
   }
 
-  h1 {
-
+  button {
+    border-radius: 4px;
+    margin: 2rem;
+    padding: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #284B63;
+    color: white;
   }
+
+  label {
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
 </style>

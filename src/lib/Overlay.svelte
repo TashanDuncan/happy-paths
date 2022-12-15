@@ -2,11 +2,13 @@
   export let score,
     act,
     name,
-    currentScenarioType,
+    currentScenarioType, currentScenarioId,
     storyText,
     overlayToggle,
     isOverlayVisible,
     health
+
+  const everythingIsFineImage = '/images/everythingisfine.webp'
 
     function reloadPage(){
       window.location.reload()
@@ -14,6 +16,9 @@
 </script>
 
 {#if isOverlayVisible}
+  {#if currentScenarioId === ''}{:else}
+    <img src='images/desk-headphones-coffee.jpg' alt="office background"
+                                              className="overlay-background"/>{/if}
   {#if currentScenarioType === "game-over" || health <= 0}
     <div class="overlay">
       <h1>GAME OVER</h1>
@@ -30,9 +35,9 @@
     </div>
     {:else if currentScenarioType === "game-win"}
       <div class="overlay">
-        <h1>You win</h1>
+        <h1>Congratulations</h1>
         <p>
-         Congratulations {storyText}
+         {storyText}
         </p>
         <p>Final Score: {score}</p>
         <button on:click={reloadPage}
@@ -48,7 +53,7 @@
         to the end of the day?
       </p>
       <button on:click={act("stand-up-monday")} on:click={overlayToggle}
-        >start</button
+        >Start</button
       >
     </div>
   {/if}
@@ -61,10 +66,34 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    z-index: 2;
+    top: 20%;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    margin: 0 auto;
     background-color: #fff;
     text-align: center;
+    width: 50%;
+    height: 50%;
+    border-radius: 1rem;
+    border: 5px solid black;
+  }
+
+  .overlay-background {
+    z-index: 2;
+    max-width: 100%;
+    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+  }
+
+  button {
+    border-radius: 4px;
+    margin: 2rem;
+    padding: 1rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #2EC4B6;
+    color: white;
+    border: none
   }
 </style>

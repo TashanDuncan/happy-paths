@@ -37,6 +37,7 @@
 </div>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat+Alternates&family=Space+Grotesk:wght@700&display=swap');
   .laptop {
     top: 40%;
     left: 9%;
@@ -63,6 +64,9 @@
     text-align: center;
     align-self: center;
     cursor: pointer;
+    font-family: 'Architects Daughter', cursive;
+    line-height: 1.5;
+    font-size:1.2rem;
   }
   button {
     background: none;

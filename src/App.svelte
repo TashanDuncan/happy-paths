@@ -95,6 +95,7 @@
     {isOverlayVisible}
     {score}
     {health}
+    {currentScenarioId}
   />
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins} {hours} {health} />
