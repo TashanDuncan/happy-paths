@@ -16,9 +16,10 @@
 </script>
 
 {#if isOverlayVisible}
-  {#if currentScenarioId === ''}{:else}
+  {#if currentScenarioId === 'fiery-death-monday'}    <img src='images/everythingisfine.webp' alt="office background"
+                                                           class="overlay-background"/>{:else}
     <img src='images/desk-headphones-coffee.jpg' alt="office background"
-                                              className="overlay-background"/>{/if}
+                                              class="overlay-background"/>{/if}
   {#if currentScenarioType === "game-over" || health <= 0}
     <div class="overlay">
       <h1>GAME OVER</h1>
