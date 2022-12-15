@@ -66,9 +66,11 @@
     backGroundImg = url
   }
 
-  $: if (currentScenarioType === "game-over") {
+  $: if (currentScenarioType === "game-over" || currentScenarioType === "game-win") {
     overlayToggle();
   }
+
+
 
 </script>
 

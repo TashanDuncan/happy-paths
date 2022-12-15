@@ -28,6 +28,17 @@
         >Restart</button
       >
     </div>
+    {:else if currentScenarioType === "game-win"}
+      <div class="overlay">
+        <h1>You win</h1>
+        <p>
+         Congratulations {storyText}
+        </p>
+        <p>Final Score: {score}</p>
+        <button on:click={reloadPage}
+        >Restart</button
+        >
+      </div>
   {:else}
     <div class="overlay">
       <h1>Welcome {name}</h1>

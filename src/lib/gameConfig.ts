@@ -3,7 +3,7 @@ interface GameConfig {
   scenario: string;
   prompt: string;
   options?: Options[];
-  type: "normal" | "game-over" | "mini-game";
+  type: "normal" | "game-over" | "mini-game" | "game-win";
 }
 
 interface Options {
@@ -478,7 +478,7 @@ Official Appl3`,
     scenario: "Win",
     prompt:
         "You win!",
-    type: "game-over",
+    type: "game-win",
   },
   {
     id: "home-monday",
