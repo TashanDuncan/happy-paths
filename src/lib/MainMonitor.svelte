@@ -11,7 +11,7 @@
 {#if currentScenarioId === "debugging-game-monday"}
   <div class="box monitor"><DebuggingGame {setScore}/></div>
 {:else if currentScenarioId === "memory-game-monday"}
-  <div class="box monitor"><MemoryGame {setScore}/></div>
+  <div class="box monitor"><MemoryGame {setScore} {currentScenarioId}/></div>
 {:else if currentScenarioId === "driving-game-monday"}
   <div class="box monitor" style="align-items: normal;"><DrivingTest {setScore}/></div>
 {:else}

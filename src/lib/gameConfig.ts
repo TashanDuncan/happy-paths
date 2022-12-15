@@ -502,6 +502,6 @@ Official Appl3`,
       {option: "Let Concierge know.", energy: -5, scenarioId: "", timeIncrease: 15},
       {option: "Try to fix the coffee machine yourself.", energy: -100, scenarioId: "electrocution-monday", timeIncrease: 0}
     ],
-    type: "game-over",
+    type: "normal",
   },
 ];

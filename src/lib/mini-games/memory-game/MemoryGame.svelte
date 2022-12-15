@@ -1,6 +1,5 @@
 <script>
-
-  export let setScore
+  export let setScore, currentScenarioId;
   let countdownSound = new Audio("sounds/countdown.mp3");
 
   $: seconds = 20;
@@ -9,8 +8,9 @@
     seconds -= 1;
     if (seconds === 0) {
       clearInterval(gameInterval);
-      setScore(memoryScore)
-      countdownSound.play()
+      setScore(memoryScore);
+      console.log(currentScenarioId)
+      if (currentScenarioId == "memory-game-monday") countdownSound.play();
     }
   }
 
@@ -19,10 +19,7 @@
   import { afterUpdate } from "svelte";
   import { memoryInput } from "./utils/MemoryInput";
 
-  import {
-    shuffleArray,
-    markSolved,
-  } from "./utils/MemoryUtils.js";
+  import { shuffleArray, markSolved } from "./utils/MemoryUtils.js";
 
   export let memoryScore;
   // State
@@ -56,45 +53,42 @@
       console.log(memoryScore);
     }
   });
-
-
 </script>
 
 <main>
-  {#if seconds>0}
-  <h1>Match up the meeting rooms as quickly as possible!</h1>
-  <div
-  class="grid"
-  style="--size: {size}; --cell-size: {cellSize}; --padd: {gap}"
->
-  {#each cells as cell, index (cell.key)}
-  <button
-  class="
+  {#if seconds > 0}
+    <h1>Match up the meeting rooms as quickly as possible!</h1>
+    <div
+      class="grid"
+      style="--size: {size}; --cell-size: {cellSize}; --padd: {gap}"
+    >
+      {#each cells as cell, index (cell.key)}
+        <button
+          class="
     cell 
     {peekTwo.includes(cell.key) ? 'peek' : ''}
     {cell.solved ? 'solved' : ''}
   "
-  data-cell-val={cell.val}
-  style="--img: {cell.img}"
-  on:click={() => handleClick(cell.key)}
-/>
-  {/each}
-</div>
+          data-cell-val={cell.val}
+          style="--img: {cell.img}"
+          on:click={() => handleClick(cell.key)}
+        />
+      {/each}
+    </div>
 
-<div class="score">
-  Score: {memoryScore}
-  <br />
-</div>
-  <div class="time">
-    Time remaining: {seconds} seconds
-  </div>
+    <div class="score">
+      Score: {memoryScore}
+      <br />
+    </div>
+    <div class="time">
+      Time remaining: {seconds} seconds
+    </div>
   {:else}
-  <div class="end-game">You were fashionably late to your meeting. </div>
+    <div class="end-game">
+      You were fashionably late to your meeting. Your scored {memoryScore} points.
+    </div>
   {/if}
-
 </main>
-
-
 
 <style>
   :root {
@@ -167,7 +161,6 @@
   .cell.solved:before {
     background: #202b61;
   }
-
 
   .grid {
     --grid-size: calc(

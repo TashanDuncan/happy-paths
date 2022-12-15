@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let setBackground, handleHealth;
+  export let setBackground, handleHealth, act;
   const drinkingSound = new Audio("/sounds/minecraft-drinking-sound.mp3");
   const refillSound = new Audio("/sounds/coffee-machine.mp3");
   $: coffee = true;
@@ -9,10 +9,18 @@
     coffee = false;
     drinkingSound.play();
   }
+  
   function refillCoffee() {
+    // if (Math.random() < 0.5) {
+    //   act("broken-coffee-machine")
+
+    // } else {
+      act("broken-coffee-machine")
+
     setBackground("images/desk-headphones-coffee.jpg");
     coffee = true;
     refillSound.play();
+  
   }
 </script>
 

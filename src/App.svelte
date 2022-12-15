@@ -89,7 +89,7 @@
   <Stats {score} {mins} {hours} {health} />
   <MainMonitor {storyText} {currentScenarioId} {setScore}/>
   <Choices {act} {handleHealth} {choiceSelection} {currentScenarioId} {timer} />
-  <Coffee {setBackground} {handleHealth}/>
+  <Coffee {setBackground} {handleHealth} {act}/>
 </main>
 
 <style>
