@@ -15,7 +15,7 @@
     //   act("broken-coffee-machine")
 
     // } else {
-      act("broken-coffee-machine")
+      // act("broken-coffee-machine")
 
     setBackground("images/desk-headphones-coffee.jpg");
     coffee = true;
