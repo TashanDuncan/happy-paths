@@ -1,6 +1,6 @@
 <script>
     import {onMount} from "svelte";
-    export let setScore;
+    export let setScore, setPlayingState
     let seconds = 20
     let bugs = []
     let debugScore = 0
@@ -33,6 +33,7 @@
         if (seconds === 0) {
             clearInterval(gameInterval)
             setScore(debugScore)
+            setPlayingState(false)
         }
         createBug()
         moveBugs()

@@ -3,17 +3,17 @@
   import DebuggingGame from "./mini-games/debugging-game/DebuggingGame.svelte";
   import DrivingTest from "./mini-games/driving-test/DrivingTest.svelte";
 
-  export let storyText: string, currentScenarioId, setScore
+  export let storyText: string, currentScenarioId, setScore, setPlayingState
 
   $: text = storyText.split("\n");
 </script>
 
 {#if currentScenarioId === "debugging-game-monday"}
-  <div class="box monitor"><DebuggingGame {setScore}/></div>
+  <div class="box monitor"><DebuggingGame {setScore} {setPlayingState}/></div>
 {:else if currentScenarioId === "memory-game-monday"}
-  <div class="box monitor"><MemoryGame {setScore} {currentScenarioId}/></div>
+  <div class="box monitor"><MemoryGame {setScore} {currentScenarioId} {setPlayingState}/></div>
 {:else if currentScenarioId === "driving-game-monday"}
-  <div class="box monitor" style="align-items: normal;"><DrivingTest {setScore}/></div>
+<!--  <div class="box monitor" style="align-items: normal;"><DrivingTest {setScore} {setPlayingState}/></div>-->
 {:else}
   <div class="box monitor">
     {#each text as line}

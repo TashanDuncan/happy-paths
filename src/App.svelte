@@ -19,6 +19,7 @@
   $: choiceSelection = [];
   $: mins = 0;
   $: hours = 9;
+  $: isPlaying = false
   let isOverlayVisible = true;
 
   function handleHealth(energy: number): void {
@@ -66,9 +67,17 @@
     backGroundImg = url
   }
 
+  function setPlayingState(state:boolean) {
+    isPlaying = state
+  }
+
   $: if (currentScenarioType === "game-over" || currentScenarioType === "game-win") {
     overlayToggle();
   }
+
+  $: if(currentScenarioType === "mini-game") {
+     isPlaying = true
+   }
 
 
 
@@ -89,8 +98,8 @@
   />
   <img src={backGroundImg} alt="office background" class="background-image" />
   <Stats {score} {mins} {hours} {health} />
-  <MainMonitor {storyText} {currentScenarioId} {setScore}/>
-  <Choices {act} {handleHealth} {choiceSelection} {currentScenarioId} {timer} />
+  <MainMonitor {storyText} {currentScenarioId} {setScore} {setPlayingState}/>
+  <Choices {act} {handleHealth} {choiceSelection} {currentScenarioId} {timer} {isPlaying}/>
   <Coffee {setBackground} {handleHealth} {act}/>
 </main>
 

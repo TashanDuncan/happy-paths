@@ -1,5 +1,5 @@
 <script>
-  export let setScore, currentScenarioId;
+  export let setScore, currentScenarioId, setPlayingState
   let countdownSound = new Audio("sounds/countdown.mp3");
 
   $: seconds = 20;
@@ -9,6 +9,7 @@
     if (seconds === 0) {
       clearInterval(gameInterval);
       setScore(memoryScore);
+      setPlayingState(false)
       console.log(currentScenarioId)
       if (currentScenarioId == "memory-game-monday") countdownSound.play();
     }

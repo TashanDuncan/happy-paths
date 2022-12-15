@@ -52,7 +52,7 @@ export const gameConfig: GameConfig[] = [
       Humiliated, you crawl back to your seat and decide maybe Teams wouldn't be the worst idea after all.`,
     options: [
       {
-        option: "Pretend nothing's happend.",
+        option: "Pretend nothing's happened.",
         energy: 0,
         scenarioId: "clap-monday",
         timeIncrease: 0,
@@ -65,7 +65,8 @@ export const gameConfig: GameConfig[] = [
     scenario: "Failed to find",
     prompt:
       `You checked the other labs on the floor, but everywhere's full. 
-      How?? No one's normally in on Mondays! Fine, to Teams it is. You're only...um...14 minutes late.`,
+      How?? No one's normally in on Mondays! Fine, to Teams it is. 
+      You're only...um...14 minutes late.`,
     options: [
       {
         option: "Open Teams.",
@@ -80,7 +81,8 @@ export const gameConfig: GameConfig[] = [
     id: "clap-monday",
     scenario: "Stand up",
     prompt:
-      `Your team ends every stand up with a clap. It's something to do with team bonding and it's not weird at all. 
+      `Your team ends every stand up with a clap. 
+      It's something to do with team bonding and it's not weird at all. 
       Definitely not cult like. Nope. Not at all. On 4...`,
     options: [
       {
@@ -114,7 +116,7 @@ export const gameConfig: GameConfig[] = [
     id: "bad-clap-start-monday",
     scenario: "Start",
     prompt:
-      "On FOUR! That was a terrible clap and your day's ruined. Right, what do you want to do first?",
+      "On FOUR! That was a terrible clap and your day's ruined. Right, shall we check our email?",
     options: [
       {
         option: "Check email",
@@ -141,7 +143,7 @@ export const gameConfig: GameConfig[] = [
     id: "good-clap-start-monday",
     scenario: "Start",
     prompt:
-      "That was a great clap, you feel energised! Right, what do you want to do first?",
+      "That was a great clap, you feel energised! Right, shall we check our email?",
     options: [
       {
         option: "Check email",
@@ -477,7 +479,7 @@ Official Appl3`,
     id: "win-screen",
     scenario: "Win",
     prompt:
-        "You win!",
+        "You may be new to the industry, but you're learning more and more everyday! One of these days, you might even be able to work on your own without breaking the pipeline.",
     type: "game-win",
   },
   {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let handleHealth, choiceSelection, act, timer, currentScenarioId;
+  export let handleHealth, choiceSelection, act, timer, currentScenarioId, isPlaying
 
   let clapSound = new Audio("sounds/single-clap.wav");
   $: if (
@@ -23,7 +23,7 @@
 <!-- Loop of Choices -->
 <div class="box laptop">
   <div class="choice-box">
-    {#if choiceSelection}
+    {#if choiceSelection && !isPlaying}
       {#each choiceSelection as choice}
         <button
           class="choice"
