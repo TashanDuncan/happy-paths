@@ -1,13 +1,6 @@
 <script lang="ts">
-  export let mins
-  export let hours
-
-
-
-
-  $: if(hours === 18){
-    alert('GAME OVER! We will put a game over overlay here:) ')
-  }
+  export let mins;
+  export let hours;
 </script>
 
 <div class="date">
@@ -16,11 +9,10 @@
 </div>
 
 <style>
-  .date{
+  .date {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-
 </style>
