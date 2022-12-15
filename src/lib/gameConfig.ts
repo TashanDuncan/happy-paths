@@ -487,4 +487,14 @@ Official Appl3`,
     prompt: "You're out of energy :(",
     type: "game-over",
   },
+  {
+    id: "broken-coffee-machine",
+    scenario: "Broken machine",
+    prompt: "Uh oh, the coffee machine doesn't seem to be working, but you need dat caffeine!",
+    options: [
+      {option: "Let Concierge know.", energy: -5, scenarioId: "", timeIncrease: 15},
+      {option: "Try to fix the coffee machine yourself.", energy: -100, scenarioId: "electrocution-monday", timeIncrease: 0}
+    ],
+    type: "game-over",
+  },
 ];
