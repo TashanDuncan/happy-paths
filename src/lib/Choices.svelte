@@ -13,6 +13,11 @@
   $: if (currentScenarioId === "bathroom-monday") {
     flushSound.play();
   }
+
+  let eatingSound = new Audio("sounds/eating.mp3");
+  $: if (currentScenarioId === "fire-monday") {
+    eatingSound.play();
+  }
 </script>
 
 <!-- Loop of Choices -->

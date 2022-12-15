@@ -287,14 +287,14 @@ Official Appl3`,
       {
         option: "Next",
         energy: 0,
-        scenarioId: "lunch-after-meeting-monday",
+        scenarioId: "lunch-monday",
         timeIncrease: 120,
       },
     ],
     type: "mini-game",
   },
   {
-    id: "lunch-after-meeting-monday",
+    id: "lunch-monday",
     scenario: "Lunch",
     prompt:
       `What a productive meeting! You understood very little of it, but you sensed a productive vibe. 
@@ -332,8 +332,15 @@ Official Appl3`,
       {
         option: "Follow everyone!",
         energy: -20,
-        scenarioId: "evacuated-monday",
+        scenarioId: "evacuate-monday",
         timeIncrease: 60,
+      },
+      {
+        option:
+          `Call 0118 999 881 99 9119 725 3`,
+          energy: -20,
+          scenarioId: "call-then-evacuate-monday",
+          timeIncrease: 0
       },
       {
         option:
@@ -346,10 +353,27 @@ Official Appl3`,
     type: "normal",
   },
   {
-    id: "evacuated-monday",
+    id: "evacuate-monday",
     scenario: "Evacuated",
     prompt:
       "Turns out there really was a fire! Apparently someone tried to burn up a possessed laptop :/",
+    options: [
+      {
+        option: "Head back to the office",
+        energy: 0,
+        scenarioId: "ticket-monday",
+        timeIncrease: 0,
+      },
+    ],
+    type: "normal",
+  },
+  {
+    id: "call-then-evacuate-monday",
+    scenario: "Evacuated",
+    prompt:
+      `No one answered the call, so you decided to evacuate with everyone else.
+      Good thing you did. Turns out there really was a fire! 
+      Apparently someone tried to burn up a possessed laptop :/`,
     options: [
       {
         option: "Head back to the office",

@@ -1,6 +1,7 @@
 <script>
 
   export let setScore
+  let countdownSound = new Audio("sounds/countdown.mp3");
 
   $: seconds = 20;
 
@@ -9,6 +10,7 @@
     if (seconds === 0) {
       clearInterval(gameInterval);
       setScore(memoryScore)
+      countdownSound.play()
     }
   }
 
