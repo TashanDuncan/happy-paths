@@ -3,6 +3,6 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/happy-paths/",
+  base: "/pages/tay-duncan/happy-paths/",
   plugins: [svelte()]
 })
